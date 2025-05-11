@@ -8,7 +8,7 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npx wrangler deploy --no-bundle"
+    "deploy": "npx wrangler deploy"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -19,6 +19,7 @@
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
+    "@cloudflare/kv-asset-handler": "^0.4.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
