@@ -1,66 +1,70 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    let pathname = url.pathname;
+    const pathname = url.pathname;
     
-    // Add trailing slash to paths without extensions or trailing slashes
-    if (!pathname.includes('.') && !pathname.endsWith('/')) {
-      pathname = `${pathname}/`;
-      return Response.redirect(`${url.origin}${pathname}`, 301);
+    // Debug information: return a list of all available keys if accessing /debug-assets
+    if (pathname === '/debug-assets') {
+      try {
+        const keys = await env.ASSETS.list();
+        return new Response(JSON.stringify({ 
+          message: "Available assets",
+          keys: keys 
+        }, null, 2), {
+          headers: { "Content-Type": "application/json" }
+        });
+      } catch (e) {
+        return new Response(JSON.stringify({ 
+          error: "Error listing assets",
+          message: e.toString() 
+        }, null, 2), {
+          headers: { "Content-Type": "application/json" }
+        });
+      }
     }
     
+    // Paths to try, in order
+    const pathsToTry = [
+      pathname, // Original path
+      pathname.endsWith('/') ? `${pathname}index.html` : pathname, // Add index.html to directory paths
+      !pathname.includes('.') ? `${pathname}.html` : pathname, // Add .html extension if no extension
+      !pathname.includes('.') && !pathname.endsWith('/') ? `${pathname}/index.html` : pathname, // Try directory index
+      '/index.html' // Fall back to root index.html
+    ];
+    
+    // Remove duplicates and empty paths
+    const uniquePaths = [...new Set(pathsToTry.filter(p => p))];
+    
+    // Try each path in order
+    for (const path of uniquePaths) {
+      try {
+        // For debugging purpose, you can see what paths are being tried
+        console.log(`Trying path: ${path}`);
+        
+        // Try the static asset directly
+        const response = await env.ASSETS.fetch(new Request(new URL(path, url.origin)));
+        if (response.status === 200) {
+          return response;
+        }
+      } catch (e) {
+        // Continue to next path on error
+        console.error(`Error fetching ${path}:`, e);
+      }
+    }
+    
+    // If nothing worked, try to serve 404.html
     try {
-      // Handle the root path
-      if (pathname === '/' || pathname === '') {
-        return await env.ASSETS.fetch(`${url.origin}/index.html`);
-      }
-      
-      // Handle paths ending with trailing slash - try to serve index.html
-      if (pathname.endsWith('/')) {
-        return await env.ASSETS.fetch(`${url.origin}${pathname}index.html`);
-      }
-      
-      // Try to serve the exact asset
-      return await env.ASSETS.fetch(request);
+      const notFoundResponse = await env.ASSETS.fetch(new Request(new URL('/404.html', url.origin)));
+      return new Response(notFoundResponse.body, { 
+        status: 404,
+        headers: { "Content-Type": "text/html;charset=UTF-8" }
+      });
     } catch (e) {
-      console.error("Error serving asset:", e);
-      
-      // Try to serve the path with .html extension if no extension is present
-      if (!pathname.includes('.')) {
-        try {
-          return await env.ASSETS.fetch(`${url.origin}${pathname}.html`);
-        } catch (e) {
-          // If that fails, continue to other fallbacks
-        }
-      }
-      
-      // Try to serve index.html for the path
-      try {
-        if (!pathname.endsWith('/')) {
-          return await env.ASSETS.fetch(`${url.origin}${pathname}/index.html`);
-        }
-      } catch (e) {
-        // If that fails, continue to 404
-      }
-      
-      // Serve 404.html as the final fallback
-      try {
-        const notFoundResponse = await env.ASSETS.fetch(`${url.origin}/404.html`);
-        return new Response(notFoundResponse.body, { 
-          ...notFoundResponse, 
-          status: 404,
-          headers: {
-            ...notFoundResponse.headers,
-            "Content-Type": "text/html;charset=UTF-8"
-          }
-        });
-      } catch (e) {
-        // If even the 404 page can't be found, return a simple 404
-        return new Response("Page Not Found", { 
-          status: 404,
-          headers: { "Content-Type": "text/plain" }
-        });
-      }
+      // Last resort: simple plain text 404
+      return new Response(`Page Not Found - Tried paths: ${uniquePaths.join(', ')}`, { 
+        status: 404,
+        headers: { "Content-Type": "text/plain" }
+      });
     }
   }
 }; 

@@ -8,6 +8,12 @@ compatibility_flags = ["nodejs_compat"]
 bucket = "./out"
 site_include = ["**/*"]
 site_exclude = []
+entry-point = "./"
+
+[[kv_namespaces]]
+binding = "ASSETS"
+preview_id = "ASSETS"
+id = "ASSETS"
 
 [build]
 command = "npm run build" 
