@@ -1,5 +1,5 @@
 name = "healthsathi"
-main = "./workers-site/index.js"
+main = "./_worker.js"
 compatibility_date = "2025-05-11"
 compatibility_flags = ["nodejs_compat"]
 
