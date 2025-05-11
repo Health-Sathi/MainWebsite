@@ -1,9 +1,0 @@
-name = "healthsathi"
-compatibility_date = "2025-05-11"
-
-# Configure for static site deployment
-[site]
-bucket = "./out"
-
-[build]
-command = "npm run build" 
