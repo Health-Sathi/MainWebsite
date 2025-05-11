@@ -6,6 +6,8 @@ compatibility_flags = ["nodejs_compat"]
 # Configure for static site deployment
 [site]
 bucket = "./out"
+site_include = ["**/*"]
+site_exclude = []
 
 [build]
 command = "npm run build" 

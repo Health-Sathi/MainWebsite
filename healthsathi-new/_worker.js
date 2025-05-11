@@ -1,42 +1,65 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    let path = url.pathname;
+    let pathname = url.pathname;
     
-    // Handle root path
-    if (path === '/') {
-      path = '/index.html';
-    } 
-    // Handle paths that don't end with .html, .css, .js, etc.
-    else if (!path.includes('.')) {
-      path = `${path}.html`;
-      if (path.endsWith('/.html')) {
-        path = `${path.slice(0, -6)}/index.html`;
-      }
+    // Add trailing slash to paths without extensions or trailing slashes
+    if (!pathname.includes('.') && !pathname.endsWith('/')) {
+      pathname = `${pathname}/`;
+      return Response.redirect(`${url.origin}${pathname}`, 301);
     }
     
-    // Create a new request with the modified path
-    const newRequest = new Request(new URL(path, url.origin), request);
-    
     try {
-      // Attempt to serve static assets from KV
-      const response = await env.ASSETS.fetch(newRequest);
+      // Handle the root path
+      if (pathname === '/' || pathname === '') {
+        return await env.ASSETS.fetch(`${url.origin}/index.html`);
+      }
       
-      // Add security headers
-      response.headers.set('X-Content-Type-Options', 'nosniff');
-      response.headers.set('X-Frame-Options', 'DENY');
-      response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-      response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+      // Handle paths ending with trailing slash - try to serve index.html
+      if (pathname.endsWith('/')) {
+        return await env.ASSETS.fetch(`${url.origin}${pathname}index.html`);
+      }
       
-      return response;
+      // Try to serve the exact asset
+      return await env.ASSETS.fetch(request);
     } catch (e) {
-      // If the asset isn't found or there's an error, attempt to serve the 404 page
+      console.error("Error serving asset:", e);
+      
+      // Try to serve the path with .html extension if no extension is present
+      if (!pathname.includes('.')) {
+        try {
+          return await env.ASSETS.fetch(`${url.origin}${pathname}.html`);
+        } catch (e) {
+          // If that fails, continue to other fallbacks
+        }
+      }
+      
+      // Try to serve index.html for the path
       try {
-        const notFoundResponse = await env.ASSETS.fetch(new Request(`${url.origin}/404.html`, request));
-        return new Response(notFoundResponse.body, { ...notFoundResponse, status: 404 });
-      } catch (e2) {
-        // If even the 404 page is not found, return a simple 404
-        return new Response("Not Found", { status: 404 });
+        if (!pathname.endsWith('/')) {
+          return await env.ASSETS.fetch(`${url.origin}${pathname}/index.html`);
+        }
+      } catch (e) {
+        // If that fails, continue to 404
+      }
+      
+      // Serve 404.html as the final fallback
+      try {
+        const notFoundResponse = await env.ASSETS.fetch(`${url.origin}/404.html`);
+        return new Response(notFoundResponse.body, { 
+          ...notFoundResponse, 
+          status: 404,
+          headers: {
+            ...notFoundResponse.headers,
+            "Content-Type": "text/html;charset=UTF-8"
+          }
+        });
+      } catch (e) {
+        // If even the 404 page can't be found, return a simple 404
+        return new Response("Page Not Found", { 
+          status: 404,
+          headers: { "Content-Type": "text/plain" }
+        });
       }
     }
   }
