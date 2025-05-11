@@ -1,0 +1,10 @@
+name = "healthsathi"
+main = "./.next/server/app/page.js"
+compatibility_date = "2025-05-11"
+
+# Specify the output directory for static assets
+[site]
+bucket = "out"
+
+[build]
+command = "npm run build" 
