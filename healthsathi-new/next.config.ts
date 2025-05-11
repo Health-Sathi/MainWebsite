@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
+  distDir: 'out',  // Specify the output directory explicitly
+  trailingSlash: true,  // Add trailing slashes to ensure proper routing
   images: {
     domains: ['images.stockcake.com'],
     unoptimized: true,

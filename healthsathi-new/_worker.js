@@ -1,10 +1,26 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    let path = url.pathname;
+    
+    // Handle root path
+    if (path === '/') {
+      path = '/index.html';
+    } 
+    // Handle paths that don't end with .html, .css, .js, etc.
+    else if (!path.includes('.')) {
+      path = `${path}.html`;
+      if (path.endsWith('/.html')) {
+        path = `${path.slice(0, -6)}/index.html`;
+      }
+    }
+    
+    // Create a new request with the modified path
+    const newRequest = new Request(new URL(path, url.origin), request);
     
     try {
       // Attempt to serve static assets from KV
-      const response = await env.ASSETS.fetch(request);
+      const response = await env.ASSETS.fetch(newRequest);
       
       // Add security headers
       response.headers.set('X-Content-Type-Options', 'nosniff');
