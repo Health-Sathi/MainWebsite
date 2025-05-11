@@ -1,0 +1,3 @@
+# Cloudflare Pages configuration
+build:
+  command: npm run build 

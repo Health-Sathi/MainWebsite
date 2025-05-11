@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && ls -la ./out",
+    "build": "next build",
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npx wrangler deploy"
+    "deploy": "npx wrangler pages deploy out"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
