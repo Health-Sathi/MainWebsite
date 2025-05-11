@@ -1,8 +1,8 @@
 name = "healthsathi"
-main = "./.next/server/app/page.js"
 compatibility_date = "2025-05-11"
+compatibility_flags = ["nodejs_compat"]
 
-# Specify the output directory for static assets
+# Configure for static site deployment
 [site]
 bucket = "out"
 

@@ -1,14 +1,13 @@
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     
-    // Serve static assets from KV or R2
-    if (url.pathname.startsWith('/static/')) {
-      // This would point to your static assets in Cloudflare R2 or KV
-      return env.ASSETS.fetch(request);
+    try {
+      // Serve static assets
+      return await env.ASSETS.fetch(request);
+    } catch (e) {
+      // If the asset isn't found or there's an error, return a 404
+      return new Response("Not Found", { status: 404 });
     }
-    
-    // Default handling for other routes
-    return env.ASSETS.fetch(request);
   }
 }; 
