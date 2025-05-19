@@ -6,7 +6,7 @@ import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
-import Blog from "@/components/Blog";
+// import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Stats from "@/components/Stats";
 import FAQ from "@/components/FAQ";
