@@ -25,12 +25,12 @@ export default function CTA() {
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
               href="/get-started"
-              className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary ring-2 ring-[#EE2A47]"
+              className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark hover:scale-105 hover:shadow-lg transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary ring-2 ring-[#EE2A47]"
             >
               Get Started Free
             </a>
             <a href="/learn-more"
-               className="text-sm font-semibold leading-6 text-brand-white hover:text-brand-red-light transition-colors">
+               className="text-sm font-semibold leading-6 text-brand-white hover:text-brand-red-light hover:scale-105 transition-all duration-300">
               Learn More <span aria-hidden="true">→</span>
             </a>
           </div>

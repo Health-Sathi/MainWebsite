@@ -17,37 +17,19 @@ const navigation = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  // Add scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-brand-red-primary shadow-md py-2' : 'bg-transparent py-4'
-    }`}>
-      <nav className="container mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Global">
+    <header className="bg-black py-1">
+      <nav className="container mx-auto flex items-center justify-between px-3 lg:px-6" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 flex items-center">
+          <Link href="/" className="-m-1 p-1 flex items-center">
             <span className="sr-only">HealthSathi</span>
             <Image
               src="/images/logo/HealthSathi-transparentWhite.png"
               alt="HealthSathi Logo"
-              width={60}
-              height={60}
-              className="h-10 w-auto mr-2"
+              width={45}
+              height={45}
+              className="h-8 w-auto mr-2"
             />
             <span className="logo-text text-brand-white font-semibold text-xl">HealthSathi</span>
           </Link>
@@ -55,7 +37,7 @@ export default function Navbar() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2.5 text-brand-white hover:text-white"
+            className="inline-flex items-center justify-center rounded-md p-2.5 text-brand-white hover:text-brand-red-light"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -67,7 +49,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-brand-white hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full"
+              className="text-sm font-semibold leading-6 text-brand-white hover:text-brand-red-light transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-brand-red-light after:transition-all hover:after:w-full"
             >
               {item.name}
             </Link>

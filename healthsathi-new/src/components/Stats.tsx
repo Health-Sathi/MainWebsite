@@ -1,12 +1,22 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
 
-const stats = [
-  { id: 1, name: 'Active Users', value: '10,000+' },
-  { id: 2, name: 'Reports Analyzed', value: '50,000+' },
-  { id: 3, name: 'Accuracy Rate', value: '99.9%' },
-  { id: 4, name: 'Response Time', value: '< 5 min' },
+interface Stat {
+  id: number;
+  name: string;
+  value: number | string;
+  suffix?: string;
+  isText?: boolean;
+  duration?: number;
+}
+
+const stats: Stat[] = [
+  { id: 1, name: 'Active Users', value: 10000, suffix: '+' },
+  { id: 2, name: 'Reports Analyzed', value: 50000, suffix: '+', duration: 10 },
+  { id: 3, name: 'Accuracy Rate', value: 99, suffix: '%' },
+  { id: 4, name: 'Response Time', value: '< 5 sec', isText: true },
 ];
 
 const container = {
@@ -48,7 +58,17 @@ export default function Stats() {
               <motion.div key={stat.id} variants={item} className="flex flex-col bg-white p-8">
                 <dt className="text-sm font-semibold leading-6 text-gray-900">{stat.name}</dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">
-                  {stat.value}
+                  {stat.isText ? (
+                    stat.value
+                  ) : (
+                    <CountUp
+                      end={stat.value as number}
+                      suffix={stat.suffix}
+                      duration={stat.duration || 2.5}
+                      enableScrollSpy
+                      scrollSpyOnce
+                    />
+                  )}
                 </dd>
               </motion.div>
             ))}
