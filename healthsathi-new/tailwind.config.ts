@@ -34,6 +34,8 @@ const config: Config = {
         "brand-white": "#ffffff",
         "brand-off-white": "#f6f6f6",
         "brand-gray-light": "#dedede",
+        "brand-gray-dark": "#333333",
+        "brand-gray-medium": "#666666",
         gray: {
           900: "#0f0f0f",
           800: "#444444",

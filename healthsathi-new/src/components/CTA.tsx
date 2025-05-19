@@ -25,7 +25,7 @@ export default function CTA() {
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
               href="/get-started"
-              className="rounded-md bg-brand-white px-4 py-3 text-sm font-semibold text-brand-red-dark shadow-sm hover:bg-brand-off-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white transition-colors"
+              className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary ring-2 ring-[#EE2A47]"
             >
               Get Started Free
             </a>

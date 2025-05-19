@@ -4,6 +4,26 @@
   --background: #ffffff;
   --foreground: #111111;
   --brand-red: #ee2b47;
+  --brand-red-light: #f55a78;
+  --brand-red-dark: #d62642;
+  --brand-red-primary: #ee2b47;
+  --brand-red-secondary: #f55a78;
+  --brand-red-tertiary: #d62642;
+  --brand-red-quaternary: #b7002e;
+  --brand-red-quinary: #980029;
+  --brand-red-senary: #7a0025;
+  --brand-red-septenary: #5b0020;
+  --brand-red-octonary: #3d001c;
+  --brand-red-nonary: #1e0017;
+  --brand-red-denary: #000013;
+  --bg-brand-red-primary: #ee2b47;
+  --bg-brand-red-secondary: #f55a78;
+  --bg-brand-red-tertiary: #d62642;
+  --bg-brand-red-quaternary: #b7002e;
+  --bg-brand-red-quinary: #980029;
+  --bg-brand-red-senary: #7a0025;
+  --bg-brand-red-septenary: #5b0020;
+  
 }
 
 @theme inline {

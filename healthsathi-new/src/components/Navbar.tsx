@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -9,21 +9,36 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 // Updated navigation links based on health-sathi.org
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about-us' }, // Changed from '/about'
-  { name: 'Contact', href: '/contact-us' }, // Changed from '/contact'
-  { name: 'Blog', href: '/blog' },
-  { name: 'Donate', href: '/donate' }, // New link
-  // 'Services' was present in your old nav, health-sathi.org has it as a page section, not a primary nav link
+  { name: 'About Us', href: '/about-us' },
+  { name: 'Contact', href: '/contact-us' },
+//  { name: 'Blog', href: '/blog' },
+  { name: 'Donate', href: '/donate' },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Add scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   return (
-    // Using bg-brand-red-primary for the navbar background, ensure this is defined in your tailwind.config.ts
-    // Added shadow-md for a subtle shadow like the reference
-    <header className="fixed inset-x-0 top-0 z-50 bg-brand-red-primary shadow-md backdrop-blur-sm">
-      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      scrolled ? 'bg-brand-red-primary shadow-md py-2' : 'bg-transparent py-4'
+    }`}>
+      <nav className="container mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center">
             <span className="sr-only">HealthSathi</span>
@@ -34,27 +49,25 @@ export default function Navbar() {
               height={60}
               className="h-10 w-auto mr-2"
             />
-            <span className="logo-text text-brand-white">HealthSathi</span>
+            <span className="logo-text text-brand-white font-semibold text-xl">HealthSathi</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
-            // Using text-brand-white, hover:text-white for icon
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-brand-white hover:text-white"
+            className="inline-flex items-center justify-center rounded-md p-2.5 text-brand-white hover:text-white"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-8"> {/* Adjusted gap slightly */}
+        <div className="hidden lg:flex lg:gap-x-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              // Using text-brand-white, hover:text-white
-              className="text-sm font-semibold leading-6 text-brand-white hover:text-white transition-colors"
+              className="text-sm font-semibold leading-6 text-brand-white hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full"
             >
               {item.name}
             </Link>
@@ -62,15 +75,15 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            href="/get-started" // Assuming /get-started is the correct link
-            // Updated styling for a light button on dark background
-            className="text-sm font-semibold leading-6 text-brand-white border border-brand-white px-5 py-2 rounded-md hover:bg-brand-white hover:text-brand-red-primary transition-colors"
+            href="/get-started"
+            className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-[#EE2B47] shadow-sm hover:bg-brand-off-white transition-colors"
           >
-            Get Started {/* Removed arrow for closer match to reference button text */}
+            Get Started
           </Link>
         </div>
       </nav>
-      {/* Mobile Menu - applying theme colors */}
+      
+      {/* Mobile Menu */}
       <motion.div
         initial={{ opacity: 0, x: "100%" }}
         animate={{ opacity: mobileMenuOpen ? 1 : 0, x: mobileMenuOpen ? 0 : "100%" }}
@@ -78,7 +91,8 @@ export default function Navbar() {
         className={`lg:hidden ${mobileMenuOpen ? 'fixed inset-0 z-50' : 'hidden'}`}
       >
         {/* Overlay */}
-        <div className="fixed inset-0 bg-black/30" onClick={() => setMobileMenuOpen(false)} /> {/* Softer overlay */}
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
+        
         {/* Menu Panel */}
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-brand-red-primary px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
           <div className="flex items-center justify-between">
@@ -91,11 +105,11 @@ export default function Navbar() {
                 height={40}
                 className="h-10 w-auto mr-2"
               />
-              <span className="logo-text text-brand-white">HealthSathi</span>
+              <span className="logo-text text-brand-white font-semibold text-xl">HealthSathi</span>
             </Link>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-brand-white hover:text-white" // Themed close button
+              className="rounded-full p-2.5 text-brand-white hover:text-white hover:bg-brand-red-dark"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
@@ -103,14 +117,13 @@ export default function Navbar() {
             </button>
           </div>
           <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
+            <div className="-my-6 divide-y divide-gray-500/20">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    // Themed mobile nav links
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-brand-white hover:bg-brand-red-dark hover:text-white transition-colors"
+                    className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-brand-white hover:bg-brand-red-dark hover:text-white transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -120,8 +133,7 @@ export default function Navbar() {
               <div className="py-6">
                 <Link
                   href="/get-started"
-                  // Themed mobile "Get Started" button
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-brand-red-primary bg-brand-white hover:bg-gray-100 transition-colors"
+                  className="block w-full text-center rounded-full bg-white px-6 py-3 text-base font-semibold text-[#EE2B47] shadow-sm hover:bg-brand-off-white transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Get Started

@@ -32,10 +32,10 @@ export default function Home() {
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <Link
-                  href="/upload"
-                  className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary"
+                  href="tel:+17703620543"
+                  className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary ring-2 ring-[#EE2A47]"
                 >
-                  Upload Your File Now
+                  Call our 24/7 Medical Helpline
                 </Link>
               </div>
             </motion.div>
@@ -95,7 +95,7 @@ export default function Home() {
       <HowItWorks />
       <Testimonials />
       <Trust />
-      <Blog />
+      {/* <Blog /> */}
       <FAQ />
       <Contact />
       <CTA />

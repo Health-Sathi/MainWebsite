@@ -6,17 +6,25 @@ import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline
 const contactInfo = [
   {
     name: 'Email',
-    description: 'support@healthsathi.org',
+    description: (
+      <a href="mailto:support@health-sathi.org" className="hover:text-brand-red-primary transition-colors">
+        support@health-sathi.org
+      </a>
+    ),
     icon: EnvelopeIcon,
   },
   {
     name: 'Phone',
-    description: '+1 (555) 123-4567',
+    description: (
+      <a href="tel:+17703620543" className="hover:text-brand-red-primary transition-colors">
+        +1 (770) 362-0543
+      </a>
+    ),
     icon: PhoneIcon,
   },
   {
     name: 'Office',
-    description: '123 Health Street, Medical District, City, Country',
+    description: 'HQ In United States of America and in India',
     icon: MapPinIcon,
   },
 ];
@@ -106,7 +114,7 @@ export default function Contact() {
               <div>
                 <button
                   type="submit"
-                  className="rounded-md bg-brand-red-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-brand-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary"
+                  className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary ring-2 ring-[#EE2A47]"
                 >
                   Send Message
                 </button>
