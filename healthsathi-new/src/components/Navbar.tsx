@@ -57,7 +57,7 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            href="/get-started"
+            href="/contact-us"
             className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-[#EE2B47] shadow-sm hover:bg-brand-off-white transition-colors"
           >
             Get Started
@@ -114,7 +114,7 @@ export default function Navbar() {
               </div>
               <div className="py-6">
                 <Link
-                  href="/get-started"
+                  href="/contact-us"
                   className="block w-full text-center rounded-full bg-white px-6 py-3 text-base font-semibold text-[#EE2B47] shadow-sm hover:bg-brand-off-white transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
