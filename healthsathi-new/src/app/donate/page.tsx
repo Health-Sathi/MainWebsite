@@ -23,11 +23,6 @@ const DonatePage = () => {
             Loading donation form...
           </iframe>
         </div>
-
-        <p className="text-center mt-12 text-sm text-brand-black">
-          HealthSathi is fiscally sponsored by Hack Club, a 501(c)(3) nonprofit. Our registered EIN is 81-2908499.<br />
-          Questions? Get in touch at <a href="mailto:jay@health-sathi.org" className="text-brand-red-primary hover:text-brand-red-dark underline">Jay@health-sathi.org</a>.
-        </p>
       </div>
     </div>
   );

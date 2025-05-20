@@ -33,7 +33,7 @@ export default function Home() {
               <div className="mt-10 flex items-center gap-x-6">
                 <Link
                   href="tel:+17703620543"
-                  className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary ring-2 ring-[#EE2A47]"
+                  className="rounded-md border border-[#EE2B47] bg-transparent px-6 py-3 text-sm font-semibold text-[#EE2B47] shadow-sm hover:bg-[#EE2B47] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2B47] transition-colors duration-200"
                 >
                   Call our 24/7 Medical Helpline
                 </Link>
@@ -68,6 +68,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Made With The Help Of Section */}
+      <section aria-label="Technology Partners" className="bg-black py-8">
+        <h2 className="text-center text-gray-300 text-lg font-semibold tracking-widest mb-6">
+          MADE WITH THE HELP OF:
+        </h2>
+        <ul className="flex flex-wrap justify-center items-center gap-8" aria-label="Partner Logos">
+          <li>
+            <img src="/images/logo/groq.png" alt="Groq" className="h-12" />
+          </li>
+          <li>
+            <img src="/images/logo/openai.png" alt="OpenAI" className="h-12" />
+          </li>
+        </ul>
+      </section>
+
       {/* What is HealthSathi? Section */}
       <section className="bg-brand-off-white py-8 sm:py-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -81,7 +96,7 @@ export default function Home() {
             <div className="mt-10">
               <Link
                 href="/about-us"
-                className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary"
+                className="rounded-md border border-[#EE2B47] bg-transparent px-6 py-3 text-sm font-semibold text-[#EE2B47] shadow-sm hover:bg-[#EE2B47] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2B47] transition-colors duration-200"
               >
                 About Us
               </Link>

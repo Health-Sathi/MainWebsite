@@ -24,7 +24,7 @@ export default function CTA() {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
-              href="/get-started"
+              href="/contact-us"
               className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark hover:scale-105 hover:shadow-lg transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary ring-2 ring-[#EE2A47]"
             >
               Get Started Free

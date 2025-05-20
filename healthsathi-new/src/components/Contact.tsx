@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { useState, useEffect } from 'react';
-import { databases, DATABASE_ID, CONTACTS_COLLECTION_ID, ID, account } from '@/lib/appwrite';
+// import { databases, DATABASE_ID, CONTACTS_COLLECTION_ID, ID, account } from '@/lib/appwrite';
 
 const contactInfo = [
   {
@@ -32,74 +32,73 @@ const contactInfo = [
 ];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   message: ''
+  // });
+  // const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  // const [errorMessage, setErrorMessage] = useState('');
 
-  useEffect(() => {
-    // Create anonymous session
-    const createAnonymousSession = async () => {
-      try {
-        await account.createAnonymousSession();
-      } catch (error) {
-        console.error('Error creating anonymous session:', error);
-      }
-    };
-    createAnonymousSession();
-  }, []);
+  // useEffect(() => {
+  //   // Create anonymous session
+  //   const createAnonymousSession = async () => {
+  //     try {
+  //       await account.createAnonymousSession();
+  //     } catch (error) {
+  //       console.error('Error creating anonymous session:', error);
+  //     }
+  //   };
+  //   createAnonymousSession();
+  // }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData(prev => ({
+  //     ...prev,
+  //     [name]: value
+  //   }));
+  // };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-    setErrorMessage('');
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setStatus('loading');
+  //   setErrorMessage('');
 
-    try {
-      const response = await databases.createDocument(
-        DATABASE_ID,
-        CONTACTS_COLLECTION_ID,
-        ID.unique(),
-        {
-          Name: formData.name,
-          Email: formData.email,
-          Message: formData.message,
-          Date: new Date().toISOString()
-        }
-      );
+  //   try {
+  //     const response = await databases.createDocument(
+  //       DATABASE_ID,
+  //       CONTACTS_COLLECTION_ID,
+  //       ID.unique(),
+  //       {
+  //         Name: formData.name,
+  //         Email: formData.email,
+  //         Message: formData.message,
+  //         Date: new Date().toISOString()
+  //       }
+  //     );
 
-      if (response) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      }
-    } catch (error: any) {
-      console.error('Full error object:', error);
-      setStatus('error');
-      
-      // More detailed error handling
-      if (error.type === 'user_unauthorized') {
-        setErrorMessage('Authentication error. Please try again.');
-      } else if (error.type === 'document_invalid_structure') {
-        setErrorMessage('Invalid form data. Please check your input.');
-      } else {
-        setErrorMessage(
-          error?.message || 
-          error?.response?.message || 
-          'Failed to send message. Please try again later.'
-        );
-      }
-    }
-  };
+  //     if (response) {
+  //       setStatus('success');
+  //       setFormData({ name: '', email: '', message: '' });
+  //     }
+  //   } catch (error: any) {
+  //     console.error('Full error object:', error);
+  //     setStatus('error');
+  //     // More detailed error handling
+  //     if (error.type === 'user_unauthorized') {
+  //       setErrorMessage('Authentication error. Please try again.');
+  //     } else if (error.type === 'document_invalid_structure') {
+  //       setErrorMessage('Invalid form data. Please check your input.');
+  //     } else {
+  //       setErrorMessage(
+  //         error?.message || 
+  //         error?.response?.message || 
+  //         'Failed to send message. Please try again later.'
+  //       );
+  //     }
+  //   }
+  // };
 
   return (
     <section className="py-24 sm:py-32 bg-secondary text-white">
@@ -110,7 +109,7 @@ export default function Contact() {
             Get in Touch
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            Have questions about our services? We&apos;re here to help. Send us a message and we&apos;ll respond as soon as possible.
+            Have questions about our services? We&apos;re here to help. Please email us at <a href="mailto:support@health-sathi.org" className="text-brand-red-primary underline">support@health-sathi.org</a> or call <a href="tel:+17703620543" className="text-brand-red-primary underline">+1 (770) 362-0543</a>.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -142,9 +141,9 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="space-y-6"
-              onSubmit={handleSubmit}
+              // onSubmit={handleSubmit}
             >
-              {status === 'success' && (
+              {/* {status === 'success' && (
                 <div className="rounded-md bg-green-50 p-4">
                   <div className="flex">
                     <div className="flex-shrink-0">
@@ -175,13 +174,13 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-              )}
+              )} */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium leading-6 text-white">
                   Name
                 </label>
                 <div className="mt-2">
-                  <input
+                  {/* <input
                     type="text"
                     name="name"
                     id="name"
@@ -189,7 +188,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-white bg-gray-800 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-red-primary sm:text-sm sm:leading-6"
-                  />
+                  /> */}
                 </div>
               </div>
               <div>
@@ -197,7 +196,7 @@ export default function Contact() {
                   Email
                 </label>
                 <div className="mt-2">
-                  <input
+                  {/* <input
                     type="email"
                     name="email"
                     id="email"
@@ -205,7 +204,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-white bg-gray-800 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-red-primary sm:text-sm sm:leading-6"
-                  />
+                  /> */}
                 </div>
               </div>
               <div>
@@ -213,7 +212,7 @@ export default function Contact() {
                   Message
                 </label>
                 <div className="mt-2">
-                  <textarea
+                  {/* <textarea
                     name="message"
                     id="message"
                     rows={4}
@@ -221,17 +220,17 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-white bg-gray-800 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-brand-red-primary sm:text-sm sm:leading-6"
-                  />
+                  /> */}
                 </div>
               </div>
               <div>
-                <button
+                {/* <button
                   type="submit"
                   disabled={status === 'loading'}
                   className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark hover:scale-105 hover:shadow-lg transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary ring-2 ring-[#EE2A47] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {status === 'loading' ? 'Sending...' : 'Send Message'}
-                </button>
+                </button> */}
               </div>
             </motion.form>
           </div>
