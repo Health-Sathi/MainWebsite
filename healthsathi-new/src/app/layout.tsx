@@ -25,6 +25,26 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
+        {/* iubenda Cookie Consent */}
+        <Script id="iubenda-config" strategy="afterInteractive">
+          {`
+            var _iub = _iub || [];
+            _iub.csConfiguration = {"siteId":4037672,"cookiePolicyId":20806289,"lang":"en","storage":{"useSiteId":true}};
+          `}
+        </Script>
+        <Script
+          src="https://cs.iubenda.com/autoblocking/4037672.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="//cdn.iubenda.com/cs/gpp/stub.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="//cdn.iubenda.com/cs/iubenda_cs.js"
+          strategy="afterInteractive"
+          async
+        />
         {/* Google Tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17066817175"
@@ -58,48 +78,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <div
-          style={{
-            position: "fixed",
-            bottom: 52,
-            right: 16,
-            zIndex: 50,
-            background: "rgba(30, 32, 38, 0.95)",
-            color: "#fff",
-            borderRadius: "8px",
-            padding: "4px 14px",
-            fontSize: "0.85rem",
-            fontWeight: 400,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-            pointerEvents: "none",
-            opacity: 0.85,
-            textAlign: "center",
-            maxWidth: 320,
-          }}
-          aria-label="Sponsorship and EIN"
-        >
-          HealthSathi is fiscally sponsored by Hack Club, a 501(c)(3) nonprofit. EIN: 81-2908499
-        </div>
-        <div
-          style={{
-            position: "fixed",
-            bottom: 16,
-            right: 16,
-            zIndex: 50,
-            background: "rgba(30, 32, 38, 0.95)",
-            color: "#fff",
-            borderRadius: "8px",
-            padding: "6px 16px",
-            fontSize: "0.95rem",
-            fontWeight: 500,
-            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-            pointerEvents: "none",
-            opacity: 0.85,
-          }}
-          aria-label="Build version"
-        >
-          Build 0.0.1 // 05-19-2025
-        </div>
       </body>
     </html>
   );

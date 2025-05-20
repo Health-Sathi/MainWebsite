@@ -12,73 +12,144 @@ import Stats from "@/components/Stats";
 import FAQ from "@/components/FAQ";
 import Trust from "@/components/Trust";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { ClockIcon, ShieldCheckIcon, GiftIcon } from '@heroicons/react/24/outline';
 
 export default function Home() {
+  const [showQR, setShowQR] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(/Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent));
+    }
+  }, []);
+
+  const phoneNumber = "+17703620543";
+  const qrValue = `tel:${phoneNumber}`;
+
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-brand-white">
-        <div className="mx-auto max-w-7xl px-6 pb-12 pt-10 sm:pb-16 lg:flex lg:px-8 lg:py-24">
-          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h1 className="mt-10 text-4xl font-bold tracking-tight text-brand-black sm:text-6xl">
-                Understand Your Medical Reports Easily with <span className="text-brand-red-primary">AI</span>
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-brand-black">
-                Upload your reports and let Dr. Fatafat simplify complex medical jargon for you.
-              </p>
-              <div className="mt-10 flex items-center gap-x-6">
-                <Link
-                  href="tel:+17703620543"
-                  className="rounded-md border border-[#EE2B47] bg-transparent px-6 py-3 text-sm font-semibold text-[#EE2B47] shadow-sm hover:bg-[#EE2B47] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EE2B47] transition-colors duration-200"
-                >
-                  Call our 24/7 Medical Helpline
-                </Link>
-              </div>
-            </motion.div>
+      {/* HERO SECTION */}
+      <section className="relative isolate overflow-hidden bg-brand-white min-h-[600px] flex items-center">
+        <div className="mx-auto max-w-7xl w-full px-6 py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
+          {/* Left: Text Content */}
+          <div className="w-full max-w-xl flex flex-col items-start justify-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-black mb-6 leading-tight">
+              Instant <span className="text-brand-red-primary">AI Doctor</span> Help, Anytime
+            </h1>
+            <p className="text-lg text-brand-black mb-6">
+              Understand any prescription, lab report, and health concern now! with your personal AI doctor. Free, 24/7.
+            </p>
+            {isMobile ? (
+              <a
+                href={`tel:${phoneNumber}`}
+                className="inline-block rounded-md border border-[#EE2B47] bg-transparent px-6 py-3 text-sm font-semibold text-[#EE2B47] shadow-sm hover:bg-[#EE2B47] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-colors duration-200 mb-6"
+              >
+                Call your AI Doctor
+              </a>
+            ) : (
+              <button
+                onClick={() => setShowQR(true)}
+                className="inline-block rounded-md border border-[#EE2B47] bg-transparent px-6 py-3 text-sm font-semibold text-[#EE2B47] shadow-sm hover:bg-[#EE2B47] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-colors duration-200 mb-6"
+              >
+                Call your AI Doctor
+              </button>
+            )}
+            <div className="flex flex-wrap gap-4 mb-2">
+              <span className="inline-flex items-center gap-2 bg-brand-off-white text-brand-black px-4 py-2 rounded-full text-sm font-medium border border-[#EE2B47]">
+                <ClockIcon className="w-5 h-5 text-[#EE2B47]" aria-hidden="true" />
+                Zero waiting time
+              </span>
+              <span className="inline-flex items-center gap-2 bg-brand-off-white text-brand-black px-4 py-2 rounded-full text-sm font-medium border border-[#EE2B47]">
+                <ShieldCheckIcon className="w-5 h-5 text-[#EE2B47]" aria-hidden="true" />
+                100% confidential
+              </span>
+              <span className="inline-flex items-center gap-2 bg-brand-off-white text-brand-black px-4 py-2 rounded-full text-sm font-medium border border-[#EE2B47]">
+                <GiftIcon className="w-5 h-5 text-[#EE2B47]" aria-hidden="true" />
+                Free of cost
+              </span>
+            </div>
+            <div className="text-xs text-gray-500 mt-2">*Service currently available in the US. International calls may incur charges.</div>
           </div>
-          <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none"
-            >
-              <Image
-                src="/images/cybernetic-recovery-chamber.jpg"
-                alt="Medical AI Technology"
-                width={2400}
-                height={1200}
-                className="w-full max-w-[1400px] h-auto rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 max-h-[800px] object-cover"
-              />
-            </motion.div>
+          {/* Right: Image with floating cards */}
+          <div className="relative w-full max-w-xl flex items-center justify-center min-h-[400px]">
+            <Image
+              src="/images/cybernetic-recovery-chamber.jpg"
+              alt="Medical AI Technology"
+              width={2400}
+              height={1200}
+              className="rounded-2xl shadow-2xl object-cover w-full h-auto max-h-[420px]"
+            />
+            {/* Floating cards (placeholders, replace with your own if available)
+            <Image
+              src="/images/floating-report-1.png"
+              alt="Floating report 1"
+              width={180}
+              height={100}
+              className="absolute top-4 left-0 shadow-lg rounded-lg rotate-[-8deg] hidden sm:block"
+            />
+            <Image
+              src="/images/floating-report-2.png"
+              alt="Floating report 2"
+              width={160}
+              height={90}
+              className="absolute bottom-8 right-0 shadow-lg rounded-lg rotate-[10deg] hidden sm:block"
+            />
+            <Image
+              src="/images/floating-report-3.png"
+              alt="Floating report 3"
+              width={120}
+              height={70}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-lg rounded-lg rotate-2 hidden md:block"
+            /> */}
           </div>
         </div>
-        <div className="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
-          <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-brand-red-primary to-brand-red-dark opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-          />
-        </div>
+        {/* QR Modal */}
+        {showQR && !isMobile && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+            <div className="bg-white rounded-xl shadow-2xl p-8 flex flex-col items-center relative">
+              <button onClick={() => setShowQR(false)} className="absolute top-2 right-2 text-gray-400 hover:text-brand-red-primary text-2xl">&times;</button>
+              <h3 className="text-lg font-bold mb-4" style={{ color: '#EE2B47' }}>Scan to Call Your AI Doctor</h3>
+              {/* Inline SVG QR code for tel:+17703620543 (generated externally, can be replaced with a package) */}
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=tel:+17703620543" alt="QR code to call AI doctor" className="mb-4" />
+              <p className="text-sm text-gray-600">Scan this QR code with your phone to call instantly.</p>
+            </div>
+          </div>
+        )}
       </section>
+
+      {/* STATS SECTION - moved up */}
+      <div className="bg-white py-6">
+        <Stats />
+      </div>
 
       {/* Made With The Help Of Section */}
       <section aria-label="Technology Partners" className="bg-black py-8">
-        <h2 className="text-center text-gray-300 text-lg font-semibold tracking-widest mb-6">
-          MADE WITH THE HELP OF:
+        <h2 className="text-center text-gray-300 text-sm font-semibold tracking-widest mb-4">
+          Technology Partners:
         </h2>
         <ul className="flex flex-wrap justify-center items-center gap-8" aria-label="Partner Logos">
           <li>
-            <img src="/images/logo/groq.png" alt="Groq" className="h-12" />
+            <img src="/images/logo/groq.png" alt="Groq" className="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
           </li>
           <li>
-            <img src="/images/logo/openai.png" alt="OpenAI" className="h-12" />
+            <img src="/images/logo/openai.png" alt="OpenAI" className="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+          </li>
+          <li>
+            <img src="/images/logo/emory.png" alt="Emory University" className="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+          </li>
+          <li>
+            <img src="/images/logo/microsoft.png" alt="Microsoft" className="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+          </li>
+          <li>
+            <img src="/images/logo/meta.png" alt="Meta" className="h-6 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+          </li>
+          <li>
+            <img src="/images/logo/google.png" alt="Google" className="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
+          </li>
+          <li>
+            <img src="/images/logo/apple.png" alt="Apple" className="h-8 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300" />
           </li>
         </ul>
       </section>
@@ -106,7 +177,6 @@ export default function Home() {
       </section>
 
       <Features />
-      <Stats />
       <HowItWorks />
       <Testimonials />
       <Trust />
@@ -117,3 +187,4 @@ export default function Home() {
     </>
   );
 }
+
