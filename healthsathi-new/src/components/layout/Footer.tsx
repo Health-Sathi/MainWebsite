@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -32,6 +33,24 @@ const Footer = () => {
               <p>Phone: <a href="tel:+17703765867" className="hover:text-brand-red-primary transition-colors">+1 (770) 376-5867</a></p>
             </address>
           </div>
+        </div>
+        {/* Social Links */}
+        <div className="flex justify-center gap-6 mb-8">
+          <a href="https://www.facebook.com/people/HealthSathi/61564719285549/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <FaFacebook className="w-6 h-6 hover:text-brand-red-primary transition-colors" />
+          </a>
+          <a href="https://x.com/Drfatafat" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+            <FaTwitter className="w-6 h-6 hover:text-brand-red-primary transition-colors" />
+          </a>
+          <a href="https://www.linkedin.com/company/healthsathi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <FaLinkedin className="w-6 h-6 hover:text-brand-red-primary transition-colors" />
+          </a>
+          <a href="https://www.instagram.com/_healthsathi_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <FaInstagram className="w-6 h-6 hover:text-brand-red-primary transition-colors" />
+          </a>
+          <a href="https://www.youtube.com/@Health-Sathi" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <FaYoutube className="w-6 h-6 hover:text-brand-red-primary transition-colors" />
+          </a>
         </div>
         <div className="text-center text-xs text-gray-500 border-t border-gray-700 pt-8">
           <p>HealthSathi Insights: Your Guide to Simplified Healthcare</p>

@@ -1,19 +1,50 @@
 import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import { FaFire, FaShieldAlt, FaChartLine, FaHandshake, FaUsers, FaSeedling, FaDoorOpen } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'About HealthSathi - Our Team and Mission',
-  description: 'Meet Jaytirth Joshi, Founder and CEO of HealthSathi, and our dedicated team working to make healthcare accessible and understandable for all.',
+  description: 'Meet Jaytirth Joshi, Founder and CEO of HealthSathi, and our dedicated team working to make healthcare accessible and understandable for all. Our advisory board includes Tushar Joshi (Business Advisor), Dr. Vivek Rawal, M.D. (Medical Advisor), Gayatri Rawel, Esq., LLB (Legal Advisor), Rani Hong (UN Special Advisor), and Mamta Joshi (Technical Advisor).',
   openGraph: {
     title: 'About HealthSathi - Our Team and Mission',
-    description: 'Meet Jaytirth Joshi, Founder and CEO of HealthSathi, and our dedicated team working to make healthcare accessible and understandable for all.',
+    description: 'Meet Jaytirth Joshi, Founder and CEO of HealthSathi, and our dedicated team working to make healthcare accessible and understandable for all. Our advisory board includes Tushar Joshi (Business Advisor), Dr. Vivek Rawal, M.D. (Medical Advisor), Gayatri Rawel, Esq., LLB (Legal Advisor), Rani Hong (UN Special Advisor), and Mamta Joshi (Technical Advisor).',
     images: [
       {
         url: '/images/team/jaytirth_joshi.png',
         width: 800,
         height: 800,
         alt: 'Jaytirth Joshi - Founder and CEO of HealthSathi',
+      },
+      {
+        url: '/images/advisory/tushar_joshi.jpeg',
+        width: 800,
+        height: 800,
+        alt: 'Tushar Joshi - Business Advisor at HealthSathi',
+      },
+      {
+        url: '/images/advisory/rani_hong.png',
+        width: 800,
+        height: 800,
+        alt: 'Rani Hong - UN Special Advisor at HealthSathi',
+      },
+      {
+        url: '/images/advisory/placeholder.png',
+        width: 800,
+        height: 800,
+        alt: 'Dr. Vivek Rawal, M.D. - Medical Advisor at HealthSathi',
+      },
+      {
+        url: '/images/advisory/placeholder.png',
+        width: 800,
+        height: 800,
+        alt: 'Gayatri Rawel, Esq., LLB - Legal Advisor at HealthSathi',
+      },
+      {
+        url: '/images/advisory/placeholder.png',
+        width: 800,
+        height: 800,
+        alt: 'Mamta Joshi - Technical Advisor at HealthSathi',
       },
     ],
   },
@@ -30,20 +61,20 @@ const AboutUsPage = () => {
     {
       name: 'Abhay Kumar Prashanth',
       role: 'Global Chief Marketing Officer',
-      bio: 'Abhay Kumar Prashanth, Leads The Global Marketing at HealthSathi',
+      bio: 'Abhay Kumar Prashanth leads the global marketing strategy at HealthSathi, driving brand awareness and user engagement across international markets. With expertise in digital marketing and brand development, he plays a crucial role in expanding HealthSathi\'s reach and impact in the healthcare technology sector.',
       imageUrl: '/images/team/abhay_kumar_prashanth.jpeg',
     },
     {
       name: 'Aiden Ziolo',
       role: 'Chief Technology Officer',
-      bio: 'Aiden Ziolo, a high school junior, is the Chief Technology Officer (CTO) of HealthSathi. With expertise in data science and AI development, he leads the technological advancements of HealthSathi&apos;s platforms, delivering user-friendly solutions that simplify complex medical information.',
+      bio: 'Aiden Ziolo, a high school junior, is the Chief Technology Officer (CTO) of HealthSathi. With expertise in data science and AI development, he leads the technological advancements of HealthSathi\'s platforms, delivering user-friendly solutions that simplify complex medical information.',
       imageUrl: '/images/team/aiden_z.png',
     },
     /* Commented out intern section
     {
       name: 'Software Development Intern',
       role: 'Software Development Intern',
-      bio: 'Contributing to the development and enhancement of HealthSathi&apos;s platform.',
+      bio: 'Contributing to the development and enhancement of HealthSathi\'s platform.',
       imageUrl: '/images/team/placeholder.png', // Placeholder image
     },
     */
@@ -53,33 +84,43 @@ const AboutUsPage = () => {
     {
       name: 'Tushar Joshi',
       role: 'Business Advisor',
+      bio: 'Tushar Joshi brings extensive business expertise to HealthSathi, guiding strategic initiatives and business development. With a strong background in entrepreneurship and business management, he provides valuable insights for scaling healthcare technology solutions globally.',
       imageUrl: '/images/advisory/tushar_joshi.jpeg',
     },
     {
       name: 'Dr. Vivek Rawal, M.D.',
       role: 'Medical Advisor',
+      bio: 'Dr. Vivek Rawal, M.D., brings extensive medical expertise to HealthSathi, ensuring our healthcare solutions meet the highest medical standards. With years of clinical experience and a deep understanding of healthcare systems, he guides our medical content and AI-driven health insights.',
       imageUrl: '/images/advisory/placeholder.png', // Placeholder image
     },
     {
       name: 'Gayatri Rawel, Esq., LLB',
       role: 'Legal Advisor',
+      bio: 'Gayatri Rawel, Esq., LLB, provides crucial legal guidance to HealthSathi, ensuring compliance with healthcare regulations and data privacy laws. Her expertise in healthcare law and international legal frameworks helps us maintain the highest standards of legal and ethical practices.',
       imageUrl: '/images/advisory/placeholder.png', // Placeholder image
     },
     {
       name: 'Rani Hong',
       role: 'UN Special Advisor',
+      bio: 'Rani Hong serves as a UN Special Advisor, bringing global healthcare policy expertise to HealthSathi. Her extensive experience in international healthcare initiatives and human rights advocacy helps shape our mission to make healthcare accessible worldwide.',
       imageUrl: '/images/advisory/rani_hong.png',
+    },
+    {
+      name: 'Mamta Joshi',
+      role: 'Technical Advisor',
+      bio: 'Mamta Joshi brings extensive experience in technical education and programming to HealthSathi. As a professional programming instructor, she has trained numerous students and professionals, bringing valuable insights to our technical development and educational initiatives.',
+      imageUrl: '/images/advisory/placeholder.png', // Placeholder image
     },
   ];
 
   const coreValues = [
-    { name: 'Passion', color: 'bg-brand-red-primary', textColor: 'text-brand-white' },
-    { name: 'Integrity', color: 'bg-brand-red-dark', textColor: 'text-brand-white' },
-    { name: 'Results', color: 'bg-brand-red-light', textColor: 'text-brand-black' },
-    { name: 'Commitment', color: 'bg-brand-black', textColor: 'text-brand-white' },
-    { name: 'Diversity', color: 'bg-brand-red-primary', textColor: 'text-brand-white' }, // Re-using primary red
-    { name: 'Growth', color: 'bg-brand-gray-light', textColor: 'text-brand-black' },
-    { name: 'Openness', color: 'bg-brand-red-light', textColor: 'text-brand-black' }, // Re-using light red
+    { name: 'Passion', color: 'bg-brand-red-primary', textColor: 'text-brand-white', icon: FaFire },
+    { name: 'Integrity', color: 'bg-brand-red-dark', textColor: 'text-brand-white', icon: FaShieldAlt },
+    { name: 'Results', color: 'bg-brand-red-light', textColor: 'text-brand-black', icon: FaChartLine },
+    { name: 'Commitment', color: 'bg-brand-black', textColor: 'text-brand-white', icon: FaHandshake },
+    { name: 'Diversity', color: 'bg-brand-red-primary', textColor: 'text-brand-white', icon: FaUsers },
+    { name: 'Growth', color: 'bg-brand-gray-light', textColor: 'text-brand-black', icon: FaSeedling },
+    { name: 'Openness', color: 'bg-brand-red-light', textColor: 'text-brand-black', icon: FaDoorOpen },
   ];
 
 
@@ -137,12 +178,20 @@ const AboutUsPage = () => {
             At HealthSathi, we stand by our commitment to quality, integrity, and accessibility in healthcare.
           </p>
           <div className="max-w-4xl mx-auto">
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 text-center">
-              {coreValues.map((value) => (
-                <div key={value.name} className={`p-6 rounded-lg shadow-md ${value.color} ${value.textColor} flex items-center justify-center aspect-square`}>
-                  <h4 className="font-semibold text-lg">{value.name}</h4>
-                </div>
-              ))}
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 text-center">
+              {coreValues.map((value) => {
+                const Icon = value.icon;
+                return (
+                  <div
+                    key={value.name}
+                    className={`flex flex-col items-center justify-center p-4 rounded-2xl shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${value.color} ${value.textColor}`}
+                    style={{ minHeight: '120px' }}
+                  >
+                    <Icon className="mb-2 text-2xl md:text-3xl" />
+                    <h4 className="font-semibold text-lg md:text-xl">{value.name}</h4>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -176,17 +225,44 @@ const AboutUsPage = () => {
             {teamMembers.map((member) => (
               <div key={member.name} className="bg-brand-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="relative w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-brand-red-light">
-                  <Image
-                    src={member.imageUrl}
-                    alt={member.name}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    priority={member.name === 'Jaytirth Joshi'}
-                    sizes="(max-width: 768px) 128px, 128px"
-                    title={`${member.name} - ${member.role}`}
-                  />
+                  {member.name === 'Jaytirth Joshi' ? (
+                    <a href="https://jay.health-sathi.org" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+                      <Image
+                        src={member.imageUrl}
+                        alt={member.name}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        priority={member.name === 'Jaytirth Joshi'}
+                        sizes="(max-width: 768px) 128px, 128px"
+                        title={`${member.name} - ${member.role}`}
+                      />
+                    </a>
+                  ) : (
+                    <Image
+                      src={member.imageUrl}
+                      alt={member.name}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      priority={member.name === 'Jaytirth Joshi'}
+                      sizes="(max-width: 768px) 128px, 128px"
+                      title={`${member.name} - ${member.role}`}
+                    />
+                  )}
                 </div>
-                <h3 className="text-xl font-semibold text-brand-black mb-1">{member.name}</h3>
+                <h3 className="text-xl font-semibold text-brand-black mb-1">
+                  {member.name === 'Jaytirth Joshi' ? (
+                    <a 
+                      href="https://jay.health-sathi.org" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-brand-red-primary transition-colors"
+                    >
+                      {member.name}
+                    </a>
+                  ) : (
+                    member.name
+                  )}
+                </h3>
                 <p className="text-brand-red-primary font-medium mb-3">{member.role}</p>
                 <p className="text-brand-black text-sm leading-relaxed">{member.bio}</p>
               </div>
@@ -212,6 +288,7 @@ const AboutUsPage = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-brand-black mb-1">{advisor.name}</h3>
                 <p className="text-brand-red-primary font-medium">{advisor.role}</p>
+                <p className="text-brand-black text-sm leading-relaxed">{advisor.bio}</p>
               </div>
             ))}
           </div>

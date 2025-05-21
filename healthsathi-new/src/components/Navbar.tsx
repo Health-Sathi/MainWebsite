@@ -22,15 +22,25 @@ export default function Navbar() {
     <header className="bg-black py-6">
       <nav className="container mx-auto flex items-center justify-between px-3 lg:px-6" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1 p-1 flex items-center">
-            <span className="sr-only">HealthSathi</span>
-            <Image
-              src="/images/logo/HealthSathi-transparentWhite.png"
-              alt="HealthSathi Logo"
-              width={45}
-              height={45}
-              className="h-8 w-auto mr-2"
-            />
+          <Link href="/" className="flex items-center gap-2">
+            <span
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background: '#EE2B47', // Brand red
+                borderRadius: '50%',   // Perfect circle
+                width: 44,
+                height: 44,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+              }}
+            >
+              <img
+                src="/images/logo/healthsathi-logo.svg"
+                alt="HealthSathi logo"
+                style={{ width: 28, height: 28 }}
+              />
+            </span>
             <span className="logo-text text-brand-white font-semibold text-xl">HealthSathi</span>
           </Link>
         </div>
@@ -78,15 +88,25 @@ export default function Navbar() {
         {/* Menu Panel */}
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-brand-red-primary px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5 flex items-center">
-              <span className="sr-only">HealthSathi</span>
-              <Image
-                src="/images/logo/HealthSathi-transparentWhite.png"
-                alt="HealthSathi Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto mr-2"
-              />
+            <Link href="/" className="flex items-center gap-2">
+              <span
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: '#EE2B47',
+                  borderRadius: '50%',
+                  width: 44,
+                  height: 44,
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
+                }}
+              >
+                <img
+                  src="/images/logo/healthsathi-logo.svg"
+                  alt="HealthSathi logo"
+                  style={{ width: 28, height: 28 }}
+                />
+              </span>
               <span className="logo-text text-brand-white font-semibold text-xl">HealthSathi</span>
             </Link>
             <button

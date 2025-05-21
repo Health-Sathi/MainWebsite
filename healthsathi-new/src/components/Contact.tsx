@@ -109,7 +109,7 @@ export default function Contact() {
             Get in Touch
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            Have questions about our services? We&apos;re here to help. Please email us at <a href="mailto:support@health-sathi.org" className="text-brand-red-primary underline">support@health-sathi.org</a> or call <a href="tel:+17703620543" className="text-brand-red-primary underline">+1 (770) 362-0543</a>.
+            Have questions about our services? We're here to help. Please email us at <a href="mailto:support@health-sathi.org" className="text-brand-red-primary underline">support@health-sathi.org</a> or call <a href="tel:+17703620543" className="text-brand-red-primary underline">+1 (770) 362-0543</a>.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

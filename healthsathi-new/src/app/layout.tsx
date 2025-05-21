@@ -25,6 +25,18 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
+        {/* Social Media Links for SEO */}
+        <link rel="me" href="https://www.facebook.com/people/HealthSathi/61564719285549/" />
+        <link rel="me" href="https://x.com/Drfatafat" />
+        <link rel="me" href="https://www.linkedin.com/company/healthsathi/" />
+        <link rel="me" href="https://www.instagram.com/_healthsathi_/" />
+        <link rel="me" href="https://www.youtube.com/@Health-Sathi" />
+        {/* OpenGraph Social Profiles */}
+        <meta property="og:see_also" content="https://www.facebook.com/people/HealthSathi/61564719285549/" />
+        <meta property="og:see_also" content="https://x.com/Drfatafat" />
+        <meta property="og:see_also" content="https://www.linkedin.com/company/healthsathi/" />
+        <meta property="og:see_also" content="https://www.instagram.com/_healthsathi_/" />
+        <meta property="og:see_also" content="https://www.youtube.com/@Health-Sathi" />
         {/* iubenda Cookie Consent */}
         <Script id="iubenda-config" strategy="afterInteractive">
           {`

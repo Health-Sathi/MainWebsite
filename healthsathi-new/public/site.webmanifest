@@ -1,21 +1,26 @@
 {
   "name": "HealthSathi",
   "short_name": "HealthSathi",
-  "description": "Your trusted health partner",
+  "description": "Accessible AI Healthcare & Medical Report Analysis",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#EE2B47",
+  "background_color": "#EE2B47",
   "display": "standalone",
   "start_url": "/"
 } 

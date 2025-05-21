@@ -74,7 +74,7 @@ export default function Testimonials() {
             What Our Users Say
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Don&apos;t just take our word for it. Here&apos;s what our users have to say about their experience with HealthSathi.
+            Don't just take our word for it. Here's what our users have to say about their experience with HealthSathi.
           </p>
         </div>
         
