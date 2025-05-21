@@ -21,12 +21,14 @@ const AboutUsPage = () => {
       bio: 'Aiden Ziolo, a high school junior, is the Chief Technology Officer (CTO) of HealthSathi. With expertise in data science and AI development, he leads the technological advancements of HealthSathi&apos;s platforms, delivering user-friendly solutions that simplify complex medical information.',
       imageUrl: '/images/team/aiden_z.png',
     },
+    /* Commented out intern section
     {
       name: 'Software Development Intern',
       role: 'Software Development Intern',
       bio: 'Contributing to the development and enhancement of HealthSathi&apos;s platform.',
       imageUrl: '/images/team/placeholder.png', // Placeholder image
     },
+    */
   ];
 
   const advisoryBoard = [
