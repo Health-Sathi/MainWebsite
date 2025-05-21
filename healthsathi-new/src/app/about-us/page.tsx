@@ -1,5 +1,23 @@
 import React from 'react';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About HealthSathi - Our Team and Mission',
+  description: 'Meet Jaytirth Joshi, Founder and CEO of HealthSathi, and our dedicated team working to make healthcare accessible and understandable for all.',
+  openGraph: {
+    title: 'About HealthSathi - Our Team and Mission',
+    description: 'Meet Jaytirth Joshi, Founder and CEO of HealthSathi, and our dedicated team working to make healthcare accessible and understandable for all.',
+    images: [
+      {
+        url: '/images/team/jaytirth_joshi.png',
+        width: 800,
+        height: 800,
+        alt: 'Jaytirth Joshi - Founder and CEO of HealthSathi',
+      },
+    ],
+  },
+};
 
 const AboutUsPage = () => {
   const teamMembers = [
@@ -163,6 +181,9 @@ const AboutUsPage = () => {
                     alt={member.name}
                     fill
                     style={{ objectFit: 'cover' }}
+                    priority={member.name === 'Jaytirth Joshi'}
+                    sizes="(max-width: 768px) 128px, 128px"
+                    title={`${member.name} - ${member.role}`}
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-brand-black mb-1">{member.name}</h3>
