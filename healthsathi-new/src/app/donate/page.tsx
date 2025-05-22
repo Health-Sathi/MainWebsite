@@ -17,7 +17,7 @@ const DonatePage = () => {
           <iframe
             src="https://hcb.hackclub.com/donations/start/healthsathi"
             title="HealthSathi Donation Form via Hack Club"
-            className="w-full h-[85vh] min-h-[1000px] border-1 rounded-lg"
+            className="w-full h-[115vh] min-h-[1000px] border-1 rounded-lg"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
           >
             Loading donation form...
