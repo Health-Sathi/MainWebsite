@@ -65,10 +65,10 @@ const AboutUsPage = () => {
       imageUrl: '/images/team/abhay_kumar_prashanth.jpeg',
     },
     {
-      name: 'Aiden Ziolo',
-      role: 'Chief Technology Officer',
-      bio: 'Aiden Ziolo, a high school junior, is the Chief Technology Officer (CTO) of HealthSathi. With expertise in data science and AI development, he leads the technological advancements of HealthSathi\'s platforms, delivering user-friendly solutions that simplify complex medical information.',
-      imageUrl: '/images/team/aiden_z.png',
+      name: 'Harivatsan Selvam',
+      role: 'Director of Engineering',
+      bio: 'Harivatsan Selvam is the Director of Engineering at HealthSathi, where he leads the development of accessible, impact-driven health tech solutions. He believes in "tech for all" and focuses on leveraging AI to improve lives and build a healthier, more equitable society.',
+      imageUrl: '/images/team/harivatsan_selvam.jpeg',
     },
     /* Commented out intern section
     {
