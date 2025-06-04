@@ -91,7 +91,7 @@ const AboutUsPage = () => {
       name: 'Dr. Vivek Rawal, M.D.',
       role: 'Medical Advisor',
       bio: 'Dr. Vivek Rawal, M.D., brings extensive medical expertise to HealthSathi, ensuring our healthcare solutions meet the highest medical standards. With years of clinical experience and a deep understanding of healthcare systems, he guides our medical content and AI-driven health insights.',
-      imageUrl: '/images/advisory/placeholder.png', // Placeholder image
+      imageUrl: '/images/advisory/V_Joshi.png',
     },
     {
       name: 'Gayatri Rawel, Esq., LLB',
