@@ -4,11 +4,15 @@ import { Metadata } from 'next';
 import { FaFire, FaShieldAlt, FaChartLine, FaHandshake, FaUsers, FaSeedling, FaDoorOpen } from 'react-icons/fa';
 
 export const metadata: Metadata = {
-  title: 'About HealthSathi - Our Team and Mission',
+  title: 'About HealthSathi - Our Team and Mission | Healthcare AI Solutions',
   description: 'Meet Jaytirth Joshi, Founder and CEO of HealthSathi, and our dedicated team working to make healthcare accessible and understandable for all. Our advisory board includes Tushar Joshi (Business Advisor), Dr. Vivek Rawal, M.D. (Medical Advisor), Gayatri Rawel, Esq., LLB (Legal Advisor), Rani Hong (UN Special Advisor), and Mamta Joshi (Technical Advisor).',
+  keywords: 'HealthSathi, healthcare AI, medical technology, healthcare accessibility, medical advisors, healthcare innovation, patient empowerment',
   openGraph: {
-    title: 'About HealthSathi - Our Team and Mission',
+    title: 'About HealthSathi - Our Team and Mission | Healthcare AI Solutions',
     description: 'Meet Jaytirth Joshi, Founder and CEO of HealthSathi, and our dedicated team working to make healthcare accessible and understandable for all. Our advisory board includes Tushar Joshi (Business Advisor), Dr. Vivek Rawal, M.D. (Medical Advisor), Gayatri Rawel, Esq., LLB (Legal Advisor), Rani Hong (UN Special Advisor), and Mamta Joshi (Technical Advisor).',
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'HealthSathi',
     images: [
       {
         url: '/images/team/jaytirth_joshi.png',
@@ -48,6 +52,30 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About HealthSathi - Our Team and Mission | Healthcare AI Solutions',
+    description: 'Meet our team working to make healthcare accessible and understandable for all through AI technology.',
+    images: ['/images/team/jaytirth_joshi.png'],
+  },
+  alternates: {
+    canonical: 'https://health-sathi.org/about-us',
+  },
+};
+
+// JSON-LD structured data
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'HealthSathi',
+  url: 'https://health-sathi.org',
+  logo: 'https://health-sathi.org/images/logo.png',
+  description: 'HealthSathi is dedicated to making healthcare accessible and understandable for all through AI technology.',
+  founder: {
+    '@type': 'Person',
+    name: 'Jaytirth Joshi',
+    jobTitle: 'Founder and CEO',
+  }
 };
 
 const AboutUsPage = () => {
@@ -126,6 +154,12 @@ const AboutUsPage = () => {
 
   return (
     <div className="bg-brand-off-white min-h-screen">
+      {/* Add JSON-LD script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 bg-gradient-to-r from-brand-red-dark to-brand-red-primary text-brand-white">
         <div className="absolute inset-0">
