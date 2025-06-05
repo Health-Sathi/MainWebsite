@@ -102,8 +102,3 @@ npm run dev
 - Follow the existing naming conventions
 - Test your changes locally before creating a PR
 
-## Contact
-
-For any questions or issues, contact:
-- Email: jaytirthjoshi@outlook.com
-- GitHub: [Your GitHub handle]
