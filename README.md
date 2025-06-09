@@ -1,4 +1,4 @@
-# HealthSathi Website
+# HealthSathi Web
 
 ## License
 
