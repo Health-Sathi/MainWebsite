@@ -98,6 +98,25 @@ const AboutUsPage = () => {
       bio: 'Harivatsan Selvam is the Director of Engineering at HealthSathi, where he leads the development of accessible, impact-driven health tech solutions. He believes in "tech for all" and focuses on leveraging AI to improve lives and build a healthier, more equitable society.',
       imageUrl: '/images/team/harivatsan_selvam.jpeg',
     },
+    {
+      name: 'Joshith Reddy Aleti',
+      role: 'Chief Technology Officer – AI/ML Operations',
+      bio: 'Joshith Reddy Aleti, HealthSathi\'s Chief Technology Officer for AI/ML Operations, is a driving force behind the company\'s intelligent healthcare infrastructure. With hands-on experience building scalable AI systems and a track record of applying machine learning in real-world environments, Joshith transforms complex data into actionable health insights. From predictive models that anticipate patient needs to AI-driven platforms that simplify diagnostics, he leads with a mission to make healthcare smarter, faster, and more accessible. His passion lies not just in cutting-edge algorithms, but in solving real human problems through responsible and transparent AI.',
+      imageUrl: '/images/team/joshith_reddy_aleti.jpeg',
+      imageLink: 'https://joshithreddyaleti.netlify.app/',
+    },
+    {
+      name: 'Aarya Gupta',
+      role: 'Director of Applied Science',
+      bio: 'Aarya Gupta is a student researcher and science communicator passionate about bridging the gap between complex biomedical innovations and public understanding. With experience in computational biology, cancer research, and data-driven health solutions, he brings a commitment to clarity, equity, and accessibility in healthcare. At Health Saathi, he aims to help make science and medicine more approachable for all communities.',
+      imageUrl: '/images/team/aarya_gupta.jpg',
+    },
+    {
+      name: 'Charvik Morampudi',
+      role: 'Head of App Development',
+      bio: 'Leading HealthSathi\'s mobile and web application development with a focus on creating intuitive, user-friendly healthcare solutions.',
+      imageUrl: '/images/team/placeholder.png',
+    },
     /* Commented out intern section
     {
       name: 'Software Development Intern',
@@ -259,8 +278,8 @@ const AboutUsPage = () => {
             {teamMembers.map((member) => (
               <div key={member.name} className="bg-brand-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="relative w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-brand-red-light">
-                  {member.name === 'Jaytirth Joshi' ? (
-                    <a href="https://jay.health-sathi.org" target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+                  {(member.name === 'Jaytirth Joshi' || member.imageLink) ? (
+                    <a href={member.imageLink || "https://jay.health-sathi.org"} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
                       <Image
                         src={member.imageUrl}
                         alt={member.name}
@@ -284,9 +303,9 @@ const AboutUsPage = () => {
                   )}
                 </div>
                 <h3 className="text-xl font-semibold text-brand-black mb-1">
-                  {member.name === 'Jaytirth Joshi' ? (
+                  {(member.name === 'Jaytirth Joshi' || member.imageLink) ? (
                     <a 
-                      href="https://jay.health-sathi.org" 
+                      href={member.imageLink || "https://jay.health-sathi.org"} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="hover:text-brand-red-primary transition-colors"
