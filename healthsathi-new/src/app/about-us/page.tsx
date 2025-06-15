@@ -4,12 +4,12 @@ import { Metadata } from 'next';
 import { FaFire, FaShieldAlt, FaChartLine, FaHandshake, FaUsers, FaSeedling, FaDoorOpen } from 'react-icons/fa';
 
 export const metadata: Metadata = {
-  title: 'About HealthSathi - Our Team and Mission | Healthcare AI Solutions',
-  description: 'Meet Jaytirth Joshi, Founder and CEO of HealthSathi, and our dedicated team working to make healthcare accessible and understandable for all. Our advisory board includes Tushar Joshi (Business Advisor), Dr. Vivek Rawal, M.D. (Medical Advisor), Gayatri Rawel, Esq., LLB (Legal Advisor), Rani Hong (UN Special Advisor), and Mamta Joshi (Technical Advisor).',
-  keywords: 'HealthSathi, healthcare AI, medical technology, healthcare accessibility, medical advisors, healthcare innovation, patient empowerment',
+  title: 'About HealthSathi | Healthcare AI & Technology Leadership Team',
+  description: 'Meet HealthSathi\'s leadership team: Jaytirth Joshi (Founder & CEO), Joshith Reddy Aleti (CTO - AI/ML), Aarya Gupta (Director of Applied Science), and our expert team working to revolutionize healthcare through AI and technology.',
+  keywords: 'HealthSathi leadership, healthcare AI team, medical technology experts, healthcare innovation leaders, AI healthcare solutions, medical technology leadership, healthcare accessibility, patient empowerment, healthcare technology team',
   openGraph: {
-    title: 'About HealthSathi - Our Team and Mission | Healthcare AI Solutions',
-    description: 'Meet Jaytirth Joshi, Founder and CEO of HealthSathi, and our dedicated team working to make healthcare accessible and understandable for all. Our advisory board includes Tushar Joshi (Business Advisor), Dr. Vivek Rawal, M.D. (Medical Advisor), Gayatri Rawel, Esq., LLB (Legal Advisor), Rani Hong (UN Special Advisor), and Mamta Joshi (Technical Advisor).',
+    title: 'About HealthSathi | Healthcare AI & Technology Leadership Team',
+    description: 'Meet HealthSathi\'s leadership team: Jaytirth Joshi (Founder & CEO), Joshith Reddy Aleti (CTO - AI/ML), Aarya Gupta (Director of Applied Science), and our expert team working to revolutionize healthcare through AI and technology.',
     type: 'website',
     locale: 'en_US',
     siteName: 'HealthSathi',
@@ -19,6 +19,18 @@ export const metadata: Metadata = {
         width: 800,
         height: 800,
         alt: 'Jaytirth Joshi - Founder and CEO of HealthSathi',
+      },
+      {
+        url: '/images/team/joshith_reddy_aleti.jpeg',
+        width: 800,
+        height: 800,
+        alt: 'Joshith Reddy Aleti - CTO of AI/ML Operations at HealthSathi',
+      },
+      {
+        url: '/images/team/aarya_gupta.jpg',
+        width: 800,
+        height: 800,
+        alt: 'Aarya Gupta - Director of Applied Science at HealthSathi',
       },
       {
         url: '/images/advisory/tushar_joshi.jpeg',
@@ -33,29 +45,17 @@ export const metadata: Metadata = {
         alt: 'Rani Hong - UN Special Advisor at HealthSathi',
       },
       {
-        url: '/images/advisory/placeholder.png',
+        url: '/images/advisory/V_Joshi.png',
         width: 800,
         height: 800,
         alt: 'Dr. Vivek Rawal, M.D. - Medical Advisor at HealthSathi',
-      },
-      {
-        url: '/images/advisory/placeholder.png',
-        width: 800,
-        height: 800,
-        alt: 'Gayatri Rawel, Esq., LLB - Legal Advisor at HealthSathi',
-      },
-      {
-        url: '/images/advisory/placeholder.png',
-        width: 800,
-        height: 800,
-        alt: 'Mamta Joshi - Technical Advisor at HealthSathi',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About HealthSathi - Our Team and Mission | Healthcare AI Solutions',
-    description: 'Meet our team working to make healthcare accessible and understandable for all through AI technology.',
+    title: 'About HealthSathi | Healthcare AI & Technology Leadership Team',
+    description: 'Meet our leadership team revolutionizing healthcare through AI and technology. Learn about our mission to make healthcare accessible and understandable for all.',
     images: ['/images/team/jaytirth_joshi.png'],
   },
   alternates: {
@@ -75,7 +75,29 @@ const jsonLd = {
     '@type': 'Person',
     name: 'Jaytirth Joshi',
     jobTitle: 'Founder and CEO',
-  }
+  },
+  employee: [
+    {
+      '@type': 'Person',
+      name: 'Joshith Reddy Aleti',
+      jobTitle: 'Chief Technology Officer - AI/ML Operations',
+    },
+    {
+      '@type': 'Person',
+      name: 'Aarya Gupta',
+      jobTitle: 'Director of Applied Science',
+    },
+    {
+      '@type': 'Person',
+      name: 'Charvik Morampudi',
+      jobTitle: 'Head of App Development',
+    }
+  ],
+  sameAs: [
+    'https://twitter.com/healthsathi',
+    'https://linkedin.com/company/healthsathi',
+    'https://facebook.com/healthsathi'
+  ]
 };
 
 const AboutUsPage = () => {
