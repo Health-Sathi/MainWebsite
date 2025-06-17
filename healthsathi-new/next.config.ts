@@ -2,17 +2,25 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  output: 'export',
-  trailingSlash: true,  // Add trailing slashes to ensure proper routing
   images: {
-    domains: ['images.stockcake.com'],
     unoptimized: true,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
+  experimental: {
+    optimizeCss: true,
+    scrollRestoration: true,
   },
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: false,
+  trailingSlash: false,
+  output: 'export',
+  distDir: 'out',
+  assetPrefix: undefined,
+  basePath: ''
 };
 
 export default nextConfig;
+
+

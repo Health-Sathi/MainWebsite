@@ -6,7 +6,6 @@ import {
   SparklesIcon, 
   ChatBubbleLeftRightIcon 
 } from '@heroicons/react/24/outline';
-import { s } from 'framer-motion/client';
 
 const steps = [
   {

@@ -11,6 +11,30 @@ import AIChat from "@/components/AIChat";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Add JSON-LD structured data
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalOrganization',
+  name: 'HealthSathi',
+  description: 'AI-powered healthcare platform for medical report analysis',
+  url: 'https://health-sathi.org',
+  logo: 'https://health-sathi.org/images/logo/healthsathi-logo.svg',
+  sameAs: [
+    'https://www.facebook.com/people/HealthSathi/61564719285549/',
+    'https://x.com/Drfatafat',
+    'https://www.linkedin.com/company/healthsathi/',
+    'https://www.instagram.com/_healthsathi_/',
+    'https://www.youtube.com/@Health-Sathi'
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+1-770-376-5867',
+    email: 'Support@health-sathi.org',
+    contactType: 'customer service',
+    availableLanguage: 'English'
+  }
+};
+
 export const metadata: Metadata = {
   title: "HealthSathi - Your AI-Powered Healthcare Companion",
   description: "HealthSathi is an AI-powered healthcare platform that simplifies medical reports and health information.",
@@ -88,6 +112,10 @@ export default function RootLayout({
             gtag('config', 'G-49DZ0JNCC4');
           `}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className={inter.className}>
         <ChatProvider>

@@ -1,16 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
-import CTA from "@/components/CTA";
 // import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Stats from "@/components/Stats";
 import FAQ from "@/components/FAQ";
 import Trust from "@/components/Trust";
+import TrustBadges from "@/components/TrustBadges";
+import EnhancedCTA from "@/components/EnhancedCTA";
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ClockIcon, ShieldCheckIcon, GiftIcon } from '@heroicons/react/24/outline';
@@ -26,7 +27,6 @@ export default function Home() {
   }, []);
 
   const phoneNumber = "+17703620543";
-  const qrValue = `tel:${phoneNumber}`;
 
   return (
     <>
@@ -176,6 +176,7 @@ export default function Home() {
         </div>
       </section>
 
+      <TrustBadges />
       <Features />
       <HowItWorks />
       <Testimonials />
@@ -183,7 +184,7 @@ export default function Home() {
       {/* <Blog /> */}
       <FAQ />
       <Contact />
-      <CTA />
+      <EnhancedCTA />
     </>
   );
 }
