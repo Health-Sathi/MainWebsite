@@ -1,35 +1,24 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' }
+  ],
+};
 
 export const defaultMetadata: Metadata = {
   metadataBase: new URL('https://health-sathi.org'),
   title: {
     default: 'HealthSathi - Accessible AI Healthcare & Medical Report Analysis',
-    template: '%s | HealthSathi - AI Healthcare Platform'
+    template: '%s | HealthSathi'
   },
   description: 'HealthSathi is your trusted AI-powered healthcare platform, making medical reports and health information accessible and understandable for everyone. Free, confidential, and available 24/7.',
-  keywords: [
-    'AI doctor',
-    'doctor AI',
-    'HealthSathi',
-    'AI medical assistant',
-    'virtual doctor',
-    'AI health analysis',
-    'medical report AI',
-    'AI medical report analysis',
-    'digital doctor',
-    'AI healthcare assistant',
-    'medical AI doctor',
-    'AI medical consultation',
-    'virtual medical assistant',
-    'AI health report analysis',
-    'medical report simplification',
-    'AI doctor consultation',
-    'digital health assistant',
-    'AI medical expert',
-    'healthcare AI assistant',
-    'medical report translator'
-  ],
-  authors: [{ name: 'HealthSathi', url: 'https://health-sathi.org' }],
+  keywords: ['healthcare', 'AI', 'medical reports', 'health information', 'accessibility', 'medical technology'],
+  authors: [{ name: 'HealthSathi Team' }],
   creator: 'HealthSathi',
   publisher: 'HealthSathi',
   formatDetection: {
@@ -49,7 +38,7 @@ export const defaultMetadata: Metadata = {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'HealthSathi - Accessible AI Healthcare & Medical Report Analysis'
+        alt: 'HealthSathi - AI Healthcare Platform'
       }
     ]
   },
@@ -78,15 +67,6 @@ export const defaultMetadata: Metadata = {
   category: 'healthcare',
   classification: 'medical technology',
   referrer: 'origin-when-cross-origin',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' }
-  ],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
   applicationName: 'HealthSathi',
   appleWebApp: {
     capable: true,

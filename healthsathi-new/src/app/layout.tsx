@@ -6,10 +6,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/layout/Footer";
 import { defaultMetadata } from './metadata';
 import Script from "next/script";
+import { ChatProvider } from "@/context/ChatContext";
+import AIChat from "@/components/AIChat";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = defaultMetadata;
+export const metadata: Metadata = {
+  title: "HealthSathi - Your AI-Powered Healthcare Companion",
+  description: "HealthSathi is an AI-powered healthcare platform that simplifies medical reports and health information.",
+};
 
 export default function RootLayout({
   children,
@@ -85,11 +90,14 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={inter.className}>
-        <Navbar />
-        <main className="min-h-screen bg-background pt-16">
-          {children}
-        </main>
-        <Footer />
+        <ChatProvider>
+          <Navbar />
+          <main className="min-h-screen bg-background pt-16">
+            {children}
+          </main>
+          <Footer />
+          <AIChat />
+        </ChatProvider>
       </body>
     </html>
   );
