@@ -19,7 +19,8 @@ export async function generateStaticParams() {
   return posts.map((post: any) => ({ slug: post.slug }));
 }
 
-export default async function BlogPostPage({ params }: PageProps) {
+export default async function BlogPostPage(props: PageProps) {
+  const { params } = await props;
   try {
     const response = await fetch(`https://blog.health-sathi.org/wp-json/wp/v2/posts?slug=${params.slug}&_embed`);
     if (!response.ok) {
@@ -75,5 +76,15 @@ export default async function BlogPostPage({ params }: PageProps) {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 
