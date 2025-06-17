@@ -14,14 +14,9 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  try {
-    const response = await fetch('https://blog.health-sathi.org/wp-json/wp/v2/posts?per_page=100');
-    const posts = await response.json();
-    return posts.map((post: any) => ({ slug: post.slug }));
-  } catch (error) {
-    console.error('Error generating static params:', error);
-    return [];
-  }
+  const response = await fetch('https://blog.health-sathi.org/wp-json/wp/v2/posts?per_page=100');
+  const posts = await response.json();
+  return posts.map((post: any) => ({ slug: post.slug }));
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
@@ -79,25 +74,6 @@ export default async function BlogPostPage({ params }: PageProps) {
       </div>
     );
   }
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
