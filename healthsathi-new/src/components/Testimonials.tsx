@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { SiApachedolphinscheduler } from 'react-icons/si';
+import { PiGooglePhotosLogoBold } from 'react-icons/pi';
+import { p } from 'framer-motion/client';
 
 const testimonials = [
   {
@@ -163,3 +166,4 @@ export default function Testimonials() {
     </section>
   );
 } 
+
