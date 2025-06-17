@@ -12,7 +12,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about-us' },
   { name: 'Contact', href: '/contact-us' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Blog', href: 'https://blog.health-sathi.org' },
   { name: 'Donate', href: '/donate' },
 ];
 
@@ -60,6 +60,8 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
+              target={item.href.startsWith('http') ? '_blank' : undefined}
+              rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               className="text-sm font-semibold leading-6 text-brand-white hover:text-brand-red-light transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-brand-red-light after:transition-all hover:after:w-full"
             >
               {item.name}
@@ -126,6 +128,8 @@ export default function Navbar() {
                   <Link
                     key={item.name}
                     href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-brand-white hover:bg-brand-red-dark hover:text-white transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >

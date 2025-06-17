@@ -166,7 +166,9 @@ export default function NotFound() {
                   Contact
                 </Link>
                 <Link
-                  href="/blog"
+                  href="https://blog.health-sathi.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-brand-red-primary hover:text-brand-red-dark transition-colors duration-300"
                 >
                   Blog

@@ -8,7 +8,7 @@ const Footer = () => {
     { href: '/about-us', label: 'About Us' },
     { href: '/contact-us', label: 'Contact' },
     { href: '/privacy-policy', label: 'Privacy Policy' },
-    { href: '/blog', label: 'Blog' },
+    { href: 'https://blog.health-sathi.org', label: 'Blog' },
     { href: '/donate', label: 'Donate' },
   ];
 
@@ -34,7 +34,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="hover:text-brand-red-primary transition-colors duration-300 text-sm">
+                  <Link 
+                    href={link.href} 
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="hover:text-brand-red-primary transition-colors duration-300 text-sm"
+                  >
                     {link.label}
                   </Link>
                 </li>
