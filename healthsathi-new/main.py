@@ -29,7 +29,7 @@ Module 5:
 
 Why is this important?/what are the takeaways from this?
 
-one of the most important takeaways from this is that we should always be open to learning and growing, and that we should always be willing to stand up for what we believe in. I mean Jesus died for it.
+one of the most  important takeaways from this is that we should always be open to learning and growing, and that we should always be willing to stand up for what we believe in. I mean Jesus died for it.
 
 
 
