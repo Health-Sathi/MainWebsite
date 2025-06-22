@@ -57,16 +57,16 @@ export function useAnalytics() {
 // Performance monitoring component
 export default function Analytics() {
   useEffect(() => {
-    // Monitor Core Web Vitals
-    if (typeof window !== 'undefined') {
-      import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-        getCLS(console.log);
-        getFID(console.log);
-        getFCP(console.log);
-        getLCP(console.log);
-        getTTFB(console.log);
-      });
-    }
+    // Monitor Core Web Vitals - temporarily disabled due to import issues
+    // if (typeof window !== 'undefined') {
+    //   import('web-vitals').then((webVitals) => {
+    //     webVitals.getCLS(console.log);
+    //     webVitals.getFID(console.log);
+    //     webVitals.getFCP(console.log);
+    //     webVitals.getLCP(console.log);
+    //     webVitals.getTTFB(console.log);
+    //   });
+    // }
   }, []);
 
   return null;
