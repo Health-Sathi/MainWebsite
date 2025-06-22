@@ -2,9 +2,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import { SiApachedolphinscheduler } from 'react-icons/si';
-import { PiGooglePhotosLogoBold } from 'react-icons/pi';
-import { p } from 'framer-motion/client';
 
 const testimonials = [
   {
@@ -77,7 +74,7 @@ export default function Testimonials() {
             What Our Users Say
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Don't just take our word for it. Here's what our users have to say about their experience with HealthSathi.
+            Don&apos;t just take our word for it. Here&apos;s what our users have to say about their experience with HealthSathi.
           </p>
         </div>
         

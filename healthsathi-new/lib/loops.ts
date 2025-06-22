@@ -3,11 +3,11 @@ const LOOPS_API_BASE_URL = 'https://app.loops.so/api/v1';
 // Type definitions for contact properties
 interface ContactProperties {
   email: string;
-  [key: string]: any;
+  [key: string]: string | number | boolean | null | undefined;
 }
 
 // Helper function to make API requests
-async function makeRequest(endpoint: string, method: string, data?: any) {
+async function makeRequest(endpoint: string, method: string, data?: Record<string, unknown>) {
   const response = await fetch(`${LOOPS_API_BASE_URL}${endpoint}`, {
     method,
     headers: {
@@ -39,7 +39,7 @@ export async function createOrUpdateContact(properties: ContactProperties) {
 }
 
 // Function to send an event
-export async function sendEvent(email: string, eventName: string, properties?: Record<string, any>) {
+export async function sendEvent(email: string, eventName: string, properties?: Record<string, string | number | boolean>) {
   try {
     return await makeRequest('/events/send', 'POST', {
       email,
@@ -56,7 +56,7 @@ export async function sendEvent(email: string, eventName: string, properties?: R
 export async function sendTransactionalEmail(
   email: string,
   transactionalId: string,
-  data?: Record<string, any>
+  data?: Record<string, string | number | boolean>
 ) {
   try {
     return await makeRequest('/transactional/send', 'POST', {

@@ -4,7 +4,6 @@ import "./globals.css";
 import "./styles/logo.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/layout/Footer";
-import { defaultMetadata } from './metadata';
 import Script from "next/script";
 import { ChatProvider } from "@/context/ChatContext";
 import AIChat from "@/components/AIChat";

@@ -47,6 +47,7 @@ export default function CallUSPage() {
         </div>
       </div>
       <Script
+        id="contact-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

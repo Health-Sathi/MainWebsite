@@ -50,6 +50,12 @@ export const metadata: Metadata = {
         height: 800,
         alt: 'Dr. Vivek Rawal, M.D. - Medical Advisor at HealthSathi',
       },
+      {
+        url: '/images/advisory/Rohit_P.jpg',
+        width: 800,
+        height: 800,
+        alt: 'Rohit Panedka - Board of Advisor for Gen AI at HealthSathi',
+      },
     ],
   },
   twitter: {
@@ -107,6 +113,7 @@ const AboutUsPage = () => {
       role: 'Founder Of HealthSathi, Chief Executive Officer and Chairman',
       bio: 'Jaytirth Joshi, the founder of HealthSathi, is a high school student driven to make healthcare accessible and understandable for all. Inspired by his medical internships, he created Dr. Fatafat, a tool to simplify medical reports and provide free, confidential health insights.',
       imageUrl: '/images/team/jaytirth_joshi.png',
+      imageLink: 'https://jay.health-sathi.org',
     },
     {
       name: 'Abhay Kumar Prashanth',
@@ -125,7 +132,6 @@ const AboutUsPage = () => {
       role: 'Chief Technology Officer – AI/ML Operations',
       bio: 'Joshith Reddy Aleti, HealthSathi\'s Chief Technology Officer for AI/ML Operations, is a driving force behind the company\'s intelligent healthcare infrastructure. With hands-on experience building scalable AI systems and a track record of applying machine learning in real-world environments, Joshith transforms complex data into actionable health insights. From predictive models that anticipate patient needs to AI-driven platforms that simplify diagnostics, he leads with a mission to make healthcare smarter, faster, and more accessible. His passion lies not just in cutting-edge algorithms, but in solving real human problems through responsible and transparent AI.',
       imageUrl: '/images/team/joshith_reddy_aleti.jpeg',
-      imageLink: 'https://joshithreddyaleti.netlify.app/',
     },
     {
       name: 'Aarya Gupta',
@@ -180,6 +186,12 @@ const AboutUsPage = () => {
       bio: 'Mamta Joshi brings extensive experience in technical education and programming to HealthSathi. As a professional programming instructor, she has trained numerous students and professionals, bringing valuable insights to our technical development and educational initiatives.',
       imageUrl: '/images/advisory/placeholder.png', // Placeholder image
     },
+    {
+      name: 'Rohit Panedka',
+      role: 'Board of Advisor for Gen AI',
+      bio: 'Rohit Panedka serves as Board of Advisor for Gen AI at HealthSathi, bringing cutting-edge artificial intelligence expertise to our healthcare solutions. As the Microsoft ATL lead, he provides strategic guidance on AI implementation, machine learning models, and generative AI technologies that power our intelligent healthcare platform.',
+      imageUrl: '/images/advisory/Rohit_P.jpg',
+    },
   ];
 
   const coreValues = [
@@ -226,7 +238,7 @@ const AboutUsPage = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-brand-black mb-12">Our Journey to Empowerment</h2>
           <p className="text-lg text-brand-black max-w-3xl mx-auto text-center leading-relaxed">
-            Founded by a team of healthcare enthusiasts and tech innovators, HealthSathi has brought together years of expertise in medicine and artificial intelligence. We've served thousands of patients, from urban clinics in the USA to rural healthcare centers in India, ensuring everyone can access understandable medical information when they need it most.
+            Founded by a team of healthcare enthusiasts and tech innovators, HealthSathi has brought together years of expertise in medicine and artificial intelligence. We&apos;ve served thousands of patients, from urban clinics in the USA to rural healthcare centers in India, ensuring everyone can access understandable medical information when they need it most.
           </p>
           <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
             <div className="p-6 bg-brand-off-white rounded-lg shadow-md">
@@ -300,8 +312,8 @@ const AboutUsPage = () => {
             {teamMembers.map((member) => (
               <div key={member.name} className="bg-brand-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="relative w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-brand-red-light">
-                  {(member.name === 'Jaytirth Joshi' || member.imageLink) ? (
-                    <a href={member.imageLink || "https://jay.health-sathi.org"} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+                  {member.imageLink ? (
+                    <a href={member.imageLink} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
                       <Image
                         src={member.imageUrl}
                         alt={member.name}
@@ -325,9 +337,9 @@ const AboutUsPage = () => {
                   )}
                 </div>
                 <h3 className="text-xl font-semibold text-brand-black mb-1">
-                  {(member.name === 'Jaytirth Joshi' || member.imageLink) ? (
+                  {member.imageLink ? (
                     <a 
-                      href={member.imageLink || "https://jay.health-sathi.org"} 
+                      href={member.imageLink} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="hover:text-brand-red-primary transition-colors"

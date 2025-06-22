@@ -45,10 +45,12 @@ export default function ContactForm() {
       setTimeout(() => {
         setStatus('idle');
       }, 5000);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error submitting contact form:', error);
       setStatus('error');
-      setErrorMessage(error.message || 'Failed to submit. Please try again later.');
+      setErrorMessage(
+        error instanceof Error ? error.message : 'Failed to submit. Please try again later.'
+      );
     }
   };
 
@@ -61,7 +63,7 @@ export default function ContactForm() {
             <h2 className="text-3xl font-bold text-primary mb-4">Contact Us</h2>
             <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
             <p className="text-gray-600 mb-8">
-              Have questions about our services? We're here to help. Please email us at support@health-sathi.org or call +1 (770) 362-0543.
+              Have questions about our services? We&apos;re here to help. Please email us at support@health-sathi.org or call +1 (770) 362-0543.
             </p>
           </div>
 
