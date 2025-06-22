@@ -9,7 +9,7 @@ export default function NotFound() {
   const [message, setMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [chatHistory, setChatHistory] = useState<Array<{ type: 'user' | 'bot', message: string }>>([
-    { type: 'bot', message: 'Hi! I\'m your HealthSathi AI assistant. How can I help you today?' }
+    { type: 'bot', message: 'Hi! I&apos;m your HealthSathi AI assistant. How can I help you today?' }
   ]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,7 +31,7 @@ export default function NotFound() {
       console.error('Error getting AI response:', error);
       setChatHistory(prev => [...prev, { 
         type: 'bot', 
-        message: 'I apologize, but I\'m having trouble connecting right now. Please try again later or visit our contact page for assistance.' 
+        message: 'I apologize, but I&apos;m having trouble connecting right now. Please try again later or visit our contact page for assistance.' 
       }]);
     }
 
@@ -49,11 +49,11 @@ export default function NotFound() {
     if (lowerQuery.includes('service') || lowerQuery.includes('offer')) {
       return 'HealthSathi offers AI-powered medical report analysis, health information simplification, and 24/7 health assistance. Would you like to know more about any specific service?';
     } else if (lowerQuery.includes('contact') || lowerQuery.includes('reach')) {
-      return 'You can reach us through our contact page, email at jaytirthjoshi@outlook.com, or call us at +1 (770) 376-5867. We\'re here to help!';
+      return 'You can reach us through our contact page, email at jaytirthjoshi@outlook.com, or call us at +1 (770) 376-5867. We&apos;re here to help!';
     } else if (lowerQuery.includes('about') || lowerQuery.includes('who')) {
       return 'HealthSathi is an AI-powered healthcare platform dedicated to making medical information accessible and understandable for everyone. We combine cutting-edge AI technology with healthcare expertise to simplify complex medical reports.';
     } else {
-      return 'I\'m here to help you navigate HealthSathi. You can ask me about our services, how to contact us, or any other questions about our platform. What would you like to know?';
+      return 'I&apos;m here to help you navigate HealthSathi. You can ask me about our services, how to contact us, or any other questions about our platform. What would you like to know?';
     }
   };
 
@@ -89,8 +89,8 @@ export default function NotFound() {
           </motion.h1>
           <h2 className="text-2xl font-semibold text-brand-black mb-4">Page Not Found</h2>
           <p className="text-brand-black/80 mb-8">
-            Oops! The page you're looking for seems to have taken a health break.
-            Let's get you back on track to better health information.
+            Oops! The page you&apos;re looking for seems to have taken a health break.
+            Let&apos;s get you back on track to better health information.
           </p>
 
           {/* AI Chat Interface */}
