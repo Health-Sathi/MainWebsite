@@ -9,7 +9,7 @@ const PrivacyPolicyPage = () => {
         </h1>
         <p className="text-sm text-gray-500 mb-6">Effective Date: January 1, 2025</p>
 
-        <p>Welcome to HealthSathi ("us", "we", or "our"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at <a href="mailto:support@health-sathi.org">support@health-sathi.org</a>.</p>
+        <p>Welcome to HealthSathi (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at <a href="mailto:support@health-sathi.org">support@health-sathi.org</a>.</p>
 
         <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">1. Information We Collect</h2>
         <p>We collect personal information that you voluntarily provide to us when you register on HealthSathi, express interest in our services, participate in activities, or contact us directly. This information may include:</p>
@@ -30,7 +30,7 @@ const PrivacyPolicyPage = () => {
           <li>Provide and maintain our services</li>
           <li>Personalize your experience</li>
           <li>Respond to your inquiries and requests</li>
-          <li>Improve HealthSathi's performance</li>
+          <li>Improve HealthSathi&apos;s performance</li>
           <li>Conduct analytics via Google Analytics 4</li>
           <li>Run remarketing and conversion tracking via Google Ads</li>
           <li>Comply with legal and regulatory obligations</li>
@@ -72,12 +72,12 @@ const PrivacyPolicyPage = () => {
         <p>A complete EULA is available below and is legally binding.</p>
 
         <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">8. Updates to This Policy</h2>
-        <p>We may update this Privacy Policy at any time. The updated version will be indicated by a revised "Effective Date." You are encouraged to review this policy periodically.</p>
+        <p>We may update this Privacy Policy at any time. The updated version will be indicated by a revised &quot;Effective Date.&quot; You are encouraged to review this policy periodically.</p>
 
         <hr className="my-8" />
 
         <h1 className="text-3xl md:text-4xl font-bold text-brand-red-primary mb-8">End-User License Agreement (EULA)</h1>
-        <p>This End-User License Agreement ("Agreement") is a legal contract between you ("User") and HealthSathi regarding your use of our website, applications, and services ("Platform").</p>
+        <p>This End-User License Agreement (&quot;Agreement&quot;) is a legal contract between you (&quot;User&quot;) and HealthSathi regarding your use of our website, applications, and services (&quot;Platform&quot;).</p>
 
         <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">1. Acceptance of Terms</h2>
         <p>By accessing or using the Platform, you agree to be bound by this Agreement.</p>
