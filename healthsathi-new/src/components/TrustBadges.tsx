@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import {
-  ShieldCheckIcon,
-  LockClosedIcon,
+import { 
+  ShieldCheckIcon, 
+  LockClosedIcon, 
   AcademicCapIcon,
   CheckBadgeIcon,
   StarIcon
@@ -49,7 +49,7 @@ export default function TrustBadges() {
             Your health data security and accuracy are our top priorities
           </p>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {trustBadges.map((badge, index) => (
             <motion.div
@@ -73,4 +73,4 @@ export default function TrustBadges() {
       </div>
     </section>
   );
-}
+} 

@@ -2,19 +2,10 @@
 User-agent: *
 Allow: /
 
-# Sitemap location (dynamic)
+# Sitemap location
 Sitemap: https://health-sathi.org/sitemap.xml
 
 # Disallow admin and private routes
 Disallow: /admin/
 Disallow: /private/
-Disallow: /api/
-
-# Crawl delay for respectful crawling
-Crawl-delay: 1
-
-# Allow important pages to be crawled frequently
-Allow: /about-us
-Allow: /contact-us
-Allow: /donate
-Allow: /call/US
+Disallow: /api/ 

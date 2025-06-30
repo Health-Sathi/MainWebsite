@@ -110,24 +110,49 @@ const AboutUsPage = () => {
   const teamMembers = [
     {
       name: 'Jaytirth Joshi',
-      role: 'Founder & CEO',
-      bio: 'Jaytirth Joshi is the visionary founder of HealthSathi, leading our mission to democratize healthcare information through AI technology. With a passion for healthcare innovation and a deep understanding of both technology and patient needs, Jaytirth drives our strategic vision and ensures we remain focused on our core mission of making healthcare accessible to everyone.',
+      role: 'Founder Of HealthSathi, Chief Executive Officer and Chairman',
+      bio: 'Jaytirth Joshi, the founder of HealthSathi, is a high school student driven to make healthcare accessible and understandable for all. Inspired by his medical internships, he created Dr. Fatafat, a tool to simplify medical reports and provide free, confidential health insights.',
       imageUrl: '/images/team/jaytirth_joshi.png',
-      imageLink: 'https://www.linkedin.com/in/jaytirth-joshi/',
+      imageLink: 'https://jay.health-sathi.org',
+    },
+    {
+      name: 'Abhay Kumar Prashanth',
+      role: 'Global Chief Marketing Officer',
+      bio: 'Abhay Kumar Prashanth leads the global marketing strategy at HealthSathi, driving brand awareness and user engagement across international markets. With expertise in digital marketing and brand development, he plays a crucial role in expanding HealthSathi\'s reach and impact in the healthcare technology sector.',
+      imageUrl: '/images/team/abhay_kumar_prashanth.jpeg',
+    },
+    {
+      name: 'Harivatsan Selvam',
+      role: 'Director of Engineering',
+      bio: 'Harivatsan Selvam is the Director of Engineering at HealthSathi, where he leads the development of accessible, impact-driven health tech solutions. He believes in "tech for all" and focuses on leveraging AI to improve lives and build a healthier, more equitable society.',
+      imageUrl: '/images/team/harivatsan_selvam.jpeg',
     },
     {
       name: 'Joshith Reddy Aleti',
-      role: 'CTO - AI/ML Operations',
-      bio: 'Joshith Reddy Aleti leads our AI/ML operations, ensuring our platform delivers accurate and reliable healthcare insights. With expertise in machine learning and healthcare data analysis, Joshith oversees the development of our AI algorithms and ensures they meet the highest standards of accuracy and reliability.',
+      role: 'Chief Technology Officer – AI/ML Operations',
+      bio: 'Joshith Reddy Aleti, HealthSathi\'s Chief Technology Officer for AI/ML Operations, is a driving force behind the company\'s intelligent healthcare infrastructure. With hands-on experience building scalable AI systems and a track record of applying machine learning in real-world environments, Joshith transforms complex data into actionable health insights. From predictive models that anticipate patient needs to AI-driven platforms that simplify diagnostics, he leads with a mission to make healthcare smarter, faster, and more accessible. His passion lies not just in cutting-edge algorithms, but in solving real human problems through responsible and transparent AI.',
       imageUrl: '/images/team/joshith_reddy_aleti.jpeg',
-      imageLink: 'https://www.linkedin.com/in/joshith-reddy-aleti/',
     },
     {
       name: 'Aarya Gupta',
       role: 'Director of Applied Science',
-      bio: 'Aarya Gupta directs our applied science initiatives, bridging the gap between cutting-edge research and practical healthcare applications. With a strong background in healthcare technology and research, Aarya ensures our solutions are grounded in scientific rigor while remaining accessible to users.',
+      bio: 'Aarya Gupta is a student researcher and science communicator passionate about bridging the gap between complex biomedical innovations and public understanding. With experience in computational biology, cancer research, and data-driven health solutions, he brings a commitment to clarity, equity, and accessibility in healthcare. At Health Saathi, he aims to help make science and medicine more approachable for all communities.',
       imageUrl: '/images/team/aarya_gupta.jpg',
     },
+    {
+      name: 'Charvik Morampudi',
+      role: 'Head of App Development',
+      bio: 'Leading HealthSathi\'s mobile and web application development with a focus on creating intuitive, user-friendly healthcare solutions.',
+      imageUrl: '/images/team/placeholder.png',
+    },
+    /* Commented out intern section
+    {
+      name: 'Software Development Intern',
+      role: 'Software Development Intern',
+      bio: 'Contributing to the development and enhancement of HealthSathi\'s platform.',
+      imageUrl: '/images/team/placeholder.png', // Placeholder image
+    },
+    */
   ];
 
   const advisoryBoard = [
@@ -144,10 +169,22 @@ const AboutUsPage = () => {
       imageUrl: '/images/advisory/V_Joshi.png',
     },
     {
+      name: 'Gayatri Rawel, Esq., LLB',
+      role: 'Legal Advisor',
+      bio: 'Gayatri Rawel, Esq., LLB, provides crucial legal guidance to HealthSathi, ensuring compliance with healthcare regulations and data privacy laws. Her expertise in healthcare law and international legal frameworks helps us maintain the highest standards of legal and ethical practices.',
+      imageUrl: '/images/advisory/placeholder.png', // Placeholder image
+    },
+    {
       name: 'Rani Hong',
       role: 'UN Special Advisor',
       bio: 'Rani Hong serves as a UN Special Advisor, bringing global healthcare policy expertise to HealthSathi. Her extensive experience in international healthcare initiatives and human rights advocacy helps shape our mission to make healthcare accessible worldwide.',
       imageUrl: '/images/advisory/rani_hong.png',
+    },
+    {
+      name: 'Mamta Joshi',
+      role: 'Technical Advisor',
+      bio: 'Mamta Joshi brings extensive experience in technical education and programming to HealthSathi. As a professional programming instructor, she has trained numerous students and professionals, bringing valuable insights to our technical development and educational initiatives.',
+      imageUrl: '/images/advisory/placeholder.png', // Placeholder image
     },
     {
       name: 'Rohit Panedka',
@@ -301,9 +338,9 @@ const AboutUsPage = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-brand-black mb-1">
                   {member.imageLink ? (
-                    <a
-                      href={member.imageLink}
-                      target="_blank"
+                    <a 
+                      href={member.imageLink} 
+                      target="_blank" 
                       rel="noopener noreferrer"
                       className="hover:text-brand-red-primary transition-colors"
                     >
@@ -349,4 +386,4 @@ const AboutUsPage = () => {
   );
 };
 
-export default AboutUsPage;
+export default AboutUsPage; 

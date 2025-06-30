@@ -1,20 +1,11 @@
 {
-  "name": "HealthSathi - AI Healthcare Platform",
+  "name": "HealthSathi",
   "short_name": "HealthSathi",
-  "description": "AI-powered healthcare platform for instant medical report analysis and 24/7 health consultation",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#EE2B47",
-  "orientation": "portrait-primary",
-  "categories": ["health", "medical", "productivity", "utilities"],
-  "lang": "en-US",
-  "dir": "ltr",
-  "scope": "/",
+  "description": "Accessible AI Healthcare & Medical Report Analysis",
   "icons": [
     {
-      "src": "/favicon-16x16.png",
-      "sizes": "16x16",
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     },
     {
@@ -23,62 +14,13 @@
       "type": "image/png"
     },
     {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
       "type": "image/png"
-    },
-    {
-      "src": "/favicon.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Call AI Doctor",
-      "short_name": "Call Now",
-      "description": "Instantly call your AI doctor for help",
-      "url": "/call/US",
-      "icons": [
-        {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
-        }
-      ]
-    },
-    {
-      "name": "About HealthSathi",
-      "short_name": "About",
-      "description": "Learn about our mission and team",
-      "url": "/about-us",
-      "icons": [
-        {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
-        }
-      ]
-    },
-    {
-      "name": "Contact Us",
-      "short_name": "Contact",
-      "description": "Get in touch with our team",
-      "url": "/contact-us",
-      "icons": [
-        {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
-        }
-      ]
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/images/cybernetic-recovery-chamber.jpg",
-      "sizes": "1200x630",
-      "type": "image/jpeg",
-      "form_factor": "wide",
-      "label": "HealthSathi AI Healthcare Platform"
-    }
-  ]
-}
+  "theme_color": "#EE2B47",
+  "background_color": "#EE2B47",
+  "display": "standalone",
+  "start_url": "/"
+} 

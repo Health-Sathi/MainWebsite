@@ -7,7 +7,7 @@ const PrivacyPolicyPage = () => {
         <h1 className="text-3xl md:text-4xl font-bold text-brand-red-primary mb-8">
           Privacy Policy
         </h1>
-        <p className="text-sm text-gray-500 mb-6">Effective Date: June 27, 2025</p>
+        <p className="text-sm text-gray-500 mb-6">Effective Date: January 1, 2025</p>
 
         <p>Welcome to HealthSathi (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at <a href="mailto:support@health-sathi.org">support@health-sathi.org</a>.</p>
 
@@ -113,4 +113,4 @@ const PrivacyPolicyPage = () => {
   );
 };
 
-export default PrivacyPolicyPage;
+export default PrivacyPolicyPage; 

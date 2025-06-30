@@ -65,4 +65,4 @@ export const medicalBusinessSchema = {
     'https://twitter.com/healthsathi',
     'https://www.linkedin.com/company/healthsathi'
   ]
-};
+}; 

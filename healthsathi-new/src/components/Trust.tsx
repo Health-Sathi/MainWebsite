@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import {
-  ShieldCheckIcon,
-  LockClosedIcon,
+import { 
+  ShieldCheckIcon, 
+  LockClosedIcon, 
   UserGroupIcon,
-  DocumentCheckIcon
+  DocumentCheckIcon 
 } from '@heroicons/react/24/outline';
 
 const features = [
@@ -85,4 +85,4 @@ export default function Trust() {
       </div>
     </section>
   );
-}
+} 

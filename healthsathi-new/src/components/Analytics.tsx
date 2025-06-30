@@ -3,14 +3,6 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
-// Define proper types for analytics
-interface AnalyticsParameters {
-  event_category?: string;
-  event_label?: string;
-  page_path?: string;
-  [key: string]: string | number | boolean | undefined;
-}
-
 // Custom analytics hook for tracking user behavior
 export function useAnalytics() {
   const pathname = usePathname();
@@ -18,16 +10,16 @@ export function useAnalytics() {
   useEffect(() => {
     // Track page views
     if (typeof window !== 'undefined') {
-      // Google Analytics 4 (using the real measurement ID from layout)
+      // Google Analytics 4 (replace with your measurement ID)
       if (window.gtag) {
-        window.gtag('config', 'G-49DZ0JNCC4', {
+        window.gtag('config', 'G-XXXXXXXXXX', {
           page_path: pathname,
         });
       }
     }
   }, [pathname]);
 
-  const trackEvent = (eventName: string, parameters?: AnalyticsParameters) => {
+  const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', eventName, parameters);
     }
@@ -78,4 +70,4 @@ export default function Analytics() {
   }, []);
 
   return null;
-}
+} 

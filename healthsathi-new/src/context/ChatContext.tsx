@@ -41,4 +41,4 @@ export function useChat() {
     throw new Error('useChat must be used within a ChatProvider');
   }
   return context;
-}
+} 

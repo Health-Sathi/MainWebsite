@@ -7,9 +7,9 @@ const TermsAndConditionsPage = () => {
         <h1 className="text-3xl md:text-4xl font-bold text-brand-red-primary mb-8">
           Terms and Conditions
         </h1>
-        <p className="text-sm text-gray-500 mb-6">Effective Date: June 27, 2025</p>
+        <p className="text-sm text-gray-500 mb-6">Effective Date: January 1, 2025</p>
 
-        <p>Welcome to HealthSathi! These Terms and Conditions (&ldquo;Agreement&rdquo;) govern your access to and use of HealthSathi&apos;s services, including its website, mobile applications, Health Pods, AI-powered tools, and any related software, hardware, content, and documentation (collectively, the &ldquo;Services&rdquo;). By accessing or using any part of our Services, you agree to be bound by these Terms.</p>
+        <p>Welcome to HealthSathi! These Terms and Conditions ("Agreement") govern your access to and use of HealthSathi's services, including its website, mobile applications, Health Pods, AI-powered tools, and any related software, hardware, content, and documentation (collectively, the "Services"). By accessing or using any part of our Services, you agree to be bound by these Terms.</p>
 
         <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">1. Ownership and License</h2>
         <ul className="list-disc pl-6 space-y-2 mb-4">
@@ -48,7 +48,7 @@ const TermsAndConditionsPage = () => {
 
         <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">5. AI Tools and Medical Disclaimers</h2>
         <ul className="list-disc pl-6 space-y-2 mb-4">
-          <li>HealthSathi&apos;s AI features are intended to assist users in understanding health data and reports. They do not constitute medical advice.</li>
+          <li>HealthSathi's AI features are intended to assist users in understanding health data and reports. They do not constitute medical advice.</li>
           <li>The AI output may rely on third-party databases and pattern recognition algorithms, which are not infallible.</li>
           <li>You must not delay or avoid seeking medical attention based on AI-generated content. Always consult a licensed physician.</li>
         </ul>
@@ -82,7 +82,7 @@ const TermsAndConditionsPage = () => {
         </ul>
 
         <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">10. Indemnity</h2>
-        <p>You agree to indemnify, defend, and hold harmless HealthSathi, its officers, directors, staff, partners, affiliates, and licensors from any claim, demand, loss, liability, or expense (including attorney&apos;s fees) arising out of your violation of this Agreement or misuse of the Services.</p>
+        <p>You agree to indemnify, defend, and hold harmless HealthSathi, its officers, directors, staff, partners, affiliates, and licensors from any claim, demand, loss, liability, or expense (including attorney's fees) arising out of your violation of this Agreement or misuse of the Services.</p>
 
         <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">11. Governing Law and Dispute Resolution</h2>
         <ul className="list-disc pl-6 space-y-2 mb-4">
@@ -96,7 +96,7 @@ const TermsAndConditionsPage = () => {
           <li>HealthSathi operates as a nonprofit healthcare technology provider and strives to comply with relevant privacy, data protection, and health information standards including:
             <ul className="list-disc pl-6 space-y-2">
               <li>U.S. HIPAA and FTC Health Breach Notification Rule (where applicable)</li>
-              <li>India&apos;s Digital Personal Data Protection Act (DPDP Act)</li>
+              <li>India's Digital Personal Data Protection Act (DPDP Act)</li>
               <li>General Data Protection Regulation (GDPR) for EU users (to the extent applicable)</li>
             </ul>
           </li>
@@ -115,17 +115,17 @@ const TermsAndConditionsPage = () => {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">14. Children&apos;s Use</h2>
+        <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">14. Children's Use</h2>
         <p>Our Services are not directed to children under 13. Users under 18 must use the Services only with the involvement of a parent or legal guardian.</p>
 
         <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">15. Contact Information</h2>
         <p><a href="mailto:support@health-sathi.org">support@health-sathi.org</a><br />Phone/WhatsApp: +1 770-362-0543</p>
 
         <hr className="my-8" />
-        <p className="text-sm text-gray-500">Please also review our <a href="/privacy-policy" className="underline">Privacy Policy</a> for more on how your information is used and your rights as a user.</p>
+        <p className="text-sm text-gray-500">Please also review our <a href="/privacy-policy" className="underline">Privacy Policy</a> and <a href="/eula" className="underline">EULA</a> for more on how your information is used and your rights as a user.</p>
       </div>
     </div>
   );
 };
 
-export default TermsAndConditionsPage;
+export default TermsAndConditionsPage; 

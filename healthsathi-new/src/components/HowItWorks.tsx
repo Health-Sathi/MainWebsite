@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import {
-  DocumentArrowUpIcon,
-  SparklesIcon,
-  ChatBubbleLeftRightIcon
+import { 
+  DocumentArrowUpIcon, 
+  SparklesIcon, 
+  ChatBubbleLeftRightIcon 
 } from '@heroicons/react/24/outline';
 
 const steps = [
@@ -83,7 +83,7 @@ export default function HowItWorks() {
       </div>
     </section>
   );
-}
+} 
 
 
 

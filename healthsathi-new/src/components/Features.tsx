@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import {
-  DocumentTextIcon,
-  BeakerIcon,
-  PhotoIcon
+import { 
+  DocumentTextIcon, 
+  BeakerIcon, 
+  PhotoIcon 
 } from '@heroicons/react/24/outline';
 
 const features = [
@@ -78,4 +78,4 @@ export default function Features() {
       </div>
     </section>
   );
-}
+} 

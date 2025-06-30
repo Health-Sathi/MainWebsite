@@ -17,7 +17,7 @@ export const defaultMetadata: Metadata = {
     template: '%s | HealthSathi'
   },
   description: 'HealthSathi is your trusted AI-powered healthcare platform, making medical reports and health information accessible and understandable for everyone. Free, confidential, and available 24/7.',
-  keywords: ['healthcare', 'AI', 'medical reports', 'health information', 'accessibility', 'medical technology', 'AI doctor', 'health consultation', 'medical analysis', 'prescription analysis', 'lab reports', 'healthcare AI', 'medical AI', 'free healthcare', '24/7 health support'],
+  keywords: ['healthcare', 'AI', 'medical reports', 'health information', 'accessibility', 'medical technology'],
   authors: [{ name: 'HealthSathi Team' }],
   creator: 'HealthSathi',
   publisher: 'HealthSathi',
@@ -35,7 +35,7 @@ export const defaultMetadata: Metadata = {
     description: 'HealthSathi is your trusted AI-powered healthcare platform, making medical reports and health information accessible and understandable for everyone. Free, confidential, and available 24/7.',
     images: [
       {
-        url: '/images/cybernetic-recovery-chamber.jpg',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'HealthSathi - AI Healthcare Platform'
@@ -46,9 +46,9 @@ export const defaultMetadata: Metadata = {
     card: 'summary_large_image',
     title: 'HealthSathi - Accessible AI Healthcare & Medical Report Analysis',
     description: 'HealthSathi is your trusted AI-powered healthcare platform, making medical reports and health information accessible and understandable for everyone. Free, confidential, and available 24/7.',
-    images: ['/images/cybernetic-recovery-chamber.jpg'],
-    creator: '@Drfatafat',
-    site: '@Drfatafat'
+    images: ['/images/twitter-image.jpg'],
+    creator: '@healthsathi',
+    site: '@healthsathi'
   },
   robots: {
     index: true,
@@ -77,4 +77,4 @@ export const defaultMetadata: Metadata = {
     'msapplication-TileColor': '#EE2B47',
     'msapplication-config': '/browserconfig.xml',
   }
-};
+}; 

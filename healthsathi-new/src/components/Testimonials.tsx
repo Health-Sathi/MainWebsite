@@ -56,11 +56,11 @@ const testimonials = [
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  
   const goToNext = () => {
     setActiveIndex((current) => (current + 1) % testimonials.length);
   };
-
+  
   const goToPrevious = () => {
     setActiveIndex((current) => (current - 1 + testimonials.length) % testimonials.length);
   };
@@ -77,24 +77,24 @@ export default function Testimonials() {
             Don&apos;t just take our word for it. Here&apos;s what our users have to say about their experience with HealthSathi.
           </p>
         </div>
-
+        
         {/* Navigation area with arrows outside the carousel */}
         <div className="flex items-center justify-center gap-4 mt-16">
           {/* Left Navigation Arrow */}
-          <button
+          <button 
             onClick={goToPrevious}
             className="z-10 bg-[#EE2A47] hover:bg-brand-red-dark text-white rounded-full p-2 shadow-lg focus:outline-none border-2 border-white flex-shrink-0"
             aria-label="Previous testimonial"
           >
             <ChevronLeftIcon className="h-8 w-8" />
           </button>
-
+          
           {/* Carousel container */}
           <div className="relative overflow-hidden flex-grow max-w-6xl">
-            <motion.div
+            <motion.div 
               className="flex gap-8"
               animate={{
-                x: `calc(-${activeIndex * 100}% - ${activeIndex * 2}rem)`
+                x: `calc(-${activeIndex * 100}% - ${activeIndex * 2}rem)` 
               }}
               transition={{
                 ease: "easeInOut",
@@ -135,9 +135,9 @@ export default function Testimonials() {
               ))}
             </motion.div>
           </div>
-
+          
           {/* Right Navigation Arrow */}
-          <button
+          <button 
             onClick={goToNext}
             className="z-10 bg-[#EE2A47] hover:bg-brand-red-dark text-white rounded-full p-2 shadow-lg focus:outline-none border-2 border-white flex-shrink-0"
             aria-label="Next testimonial"
@@ -145,7 +145,7 @@ export default function Testimonials() {
             <ChevronRightIcon className="h-8 w-8" />
           </button>
         </div>
-
+        
         {/* Navigation Dots with improved visibility */}
         <div className="flex justify-center gap-3 mt-8 bg-gray-100 py-2 px-4 rounded-full inline-block mx-auto">
           {testimonials.map((_, index) => (
@@ -162,5 +162,5 @@ export default function Testimonials() {
       </div>
     </section>
   );
-}
+} 
 
