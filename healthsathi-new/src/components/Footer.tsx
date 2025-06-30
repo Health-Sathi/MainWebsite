@@ -33,8 +33,8 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link 
-                    href={link.href} 
+                  <Link
+                    href={link.href}
                     target={link.href.startsWith('http') ? '_blank' : undefined}
                     rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="hover:text-brand-red-primary transition-colors duration-300 text-sm"
@@ -67,7 +67,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div className="lg:col-span-1">
           </div>
         </div>
@@ -80,4 +80,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

@@ -24,14 +24,14 @@ export default function NotFound() {
       // Here you would typically make an API call to your AI service
       // For now, we'll simulate a response
       const response = await simulateAIResponse(message);
-      
+
       // Add bot response to chat
       setChatHistory(prev => [...prev, { type: 'bot', message: response }]);
     } catch (error) {
       console.error('Error getting AI response:', error);
-      setChatHistory(prev => [...prev, { 
-        type: 'bot', 
-        message: 'I apologize, but I&apos;m having trouble connecting right now. Please try again later or visit our contact page for assistance.' 
+      setChatHistory(prev => [...prev, {
+        type: 'bot',
+        message: 'I apologize, but I&apos;m having trouble connecting right now. Please try again later or visit our contact page for assistance.'
       }]);
     }
 
@@ -79,7 +79,7 @@ export default function NotFound() {
           </div>
 
           {/* 404 Text */}
-          <motion.h1 
+          <motion.h1
             className="text-6xl font-bold text-brand-red-primary mb-4"
             initial={{ scale: 0.5 }}
             animate={{ scale: 1 }}

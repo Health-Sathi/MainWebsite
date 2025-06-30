@@ -10,7 +10,7 @@
 //     title: 'Understanding Your Blood Test Results',
 //     description: 'Learn how to interpret common blood test parameters and what they mean for your health.',
 //     image: '/blog/blood-test.jpg',
-//     date: 'Mar 16, 2024',
+//     date: 'Jun 16, 2025',
 //     category: 'Lab Tests',
 //   },
 //   {
@@ -18,7 +18,7 @@
 //     title: 'Decoding Your X-ray Report',
 //     description: 'A comprehensive guide to understanding the terminology and findings in your X-ray reports.',
 //     image: '/blog/xray.jpg',
-//     date: 'Mar 10, 2024',
+//     date: 'Jun 10, 2025',
 //     category: 'Imaging',
 //   },
 //   {
@@ -26,7 +26,7 @@
 //     title: 'Common Medical Terms Explained',
 //     description: 'A glossary of frequently used medical terms and their meanings in simple language.',
 //     image: '/blog/medical-terms.jpg',
-//     date: 'Mar 5, 2024',
+//     date: 'Jun 5, 2025',
 //     category: 'Education',
 //   },
 // ];
@@ -111,4 +111,4 @@
 //       </div>
 //     </section>
 //   );
-// } 
+// }

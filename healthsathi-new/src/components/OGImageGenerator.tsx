@@ -1,14 +1,18 @@
 // OG Image Generator Component for Social Media Sharing
 "use client";
 
+import Image from 'next/image';
+
 export default function OGImageGenerator() {
   return (
     <div className="w-[1200px] h-[630px] bg-gradient-to-br from-brand-red-primary to-brand-red-dark flex flex-col justify-center items-center text-white p-16">
       <div className="flex items-center gap-6 mb-8">
         <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center">
-          <img 
-            src="/images/logo/healthsathi-logo.svg" 
+          <Image
+            src="/images/logo/healthsathi-logo.svg"
             alt="HealthSathi Logo"
+            width={64}
+            height={64}
             className="w-16 h-16"
           />
         </div>
@@ -36,4 +40,4 @@ export default function OGImageGenerator() {
       </div>
     </div>
   );
-} 
+}

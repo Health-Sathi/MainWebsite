@@ -75,13 +75,14 @@ export default function Contact() {
         const data = await response.json();
         throw new Error(data.message || response.statusText);
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Error submitting form:', error);
       setStatus('error');
-      if (error.message === "Failed to fetch") {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      if (errorMessage === "Failed to fetch") {
         setErrorMessage("Too many signups, please try again in a little while");
       } else {
-        setErrorMessage(error.message || 'Failed to subscribe. Please try again later.');
+        setErrorMessage(errorMessage || 'Failed to subscribe. Please try again later.');
       }
       localStorage.setItem("loops-form-timestamp", '');
     }
@@ -138,8 +139,8 @@ export default function Contact() {
               transition={{ duration: 0.5 }}
               className="newsletter-form-container"
             >
-              <form 
-                className="newsletter-form" 
+              <form
+                className="newsletter-form"
                 onSubmit={handleSubmit}
                 style={{
                   display: 'flex',
@@ -195,7 +196,7 @@ export default function Contact() {
               </form>
 
               {status === 'success' && (
-                <div 
+                <div
                   className="newsletter-success"
                   style={{
                     display: 'flex',
@@ -204,7 +205,7 @@ export default function Contact() {
                     width: '100%'
                   }}
                 >
-                  <p 
+                  <p
                     className="newsletter-success-message"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -218,7 +219,7 @@ export default function Contact() {
               )}
 
               {status === 'error' && (
-                <div 
+                <div
                   className="newsletter-error"
                   style={{
                     display: 'flex',
@@ -227,7 +228,7 @@ export default function Contact() {
                     width: '100%'
                   }}
                 >
-                  <p 
+                  <p
                     className="newsletter-error-message"
                     style={{
                       fontFamily: 'Inter, sans-serif',
@@ -267,4 +268,4 @@ export default function Contact() {
       </div>
     </section>
   );
-} 
+}

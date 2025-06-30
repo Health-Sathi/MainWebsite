@@ -10,7 +10,7 @@ import { Components } from 'react-markdown';
 const groq = new Groq({
   apiKey: process.env.NEXT_PUBLIC_GROQ_API_KEY,
   dangerouslyAllowBrowser: true
-}); 
+});
 
 export default function AIChat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,14 +41,14 @@ export default function AIChat() {
         messages: [
           {
             role: 'system',
-            content: `You are HealthSathi's AI assistant. You help users understand medical information and navigate the HealthSathi platform. 
+            content: `You are HealthSathi's AI assistant. You help users understand medical information and navigate the HealthSathi platform.
             Key information about HealthSathi:
             - We are an AI-powered healthcare platform
             - We simplify medical reports and health information
             - Contact: jaytirthjoshi@outlook.com, +1 (770) 376-5867
             - We offer 24/7 health assistance
             - We combine AI technology with healthcare expertise
-            Important: Keep all responses very concise and to the point. Aim for 1-2 sentences maximum. 
+            Important: Keep all responses very concise and to the point. Aim for 1-2 sentences maximum.
             If more detail is needed, break it into bullet points.
             dont use any emojis, and dont use any special characters, and dont use any html tags.
             Use markdown formatting for better readability:
@@ -72,9 +72,9 @@ export default function AIChat() {
       addMessage({ type: 'bot', content: botResponse });
     } catch (error) {
       console.error('Error getting AI response:', error);
-      addMessage({ 
-        type: 'bot', 
-        content: 'I apologize, but I\'m having trouble connecting right now. Please try again later or visit our contact page for assistance.' 
+      addMessage({
+        type: 'bot',
+        content: 'I apologize, but I\'m having trouble connecting right now. Please try again later or visit our contact page for assistance.'
       });
     }
 
@@ -215,7 +215,7 @@ export default function AIChat() {
       </AnimatePresence>
     </>
   );
-} 
+}
 
 //healthsathi ai assistant (idk why i made this but i did)
 //can some one make this better?

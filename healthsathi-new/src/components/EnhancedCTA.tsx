@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 export default function EnhancedCTA() {
   const [currentUsers, setCurrentUsers] = useState(127);
-  
+
   // Simulate real-time user count
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,10 +35,10 @@ export default function EnhancedCTA() {
           </div>
 
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            Don't Wait For Your Health
+            Don&apos;t Wait For Your Health
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/90">
-            Join thousands who've already taken control of their health. 
+            Join thousands who&apos;ve already taken control of their health.
             Get instant AI-powered analysis of your medical reports today.
           </p>
 
@@ -53,7 +53,7 @@ export default function EnhancedCTA() {
               <PhoneIcon className="w-5 h-5" />
               Call Your AI Doctor Now
             </motion.a>
-            
+
             <div className="flex items-center gap-2 text-white/80">
               <ClockIcon className="w-4 h-4" />
               <span className="text-sm">Available 24/7 • Free consultation</span>
@@ -86,8 +86,8 @@ export default function EnhancedCTA() {
           >
             <blockquote className="text-white">
               <p className="text-lg italic">
-                "HealthSathi helped me understand my blood test results instantly. 
-                The AI explanation was clearer than my doctor's!"
+                &ldquo;HealthSathi helped me understand my blood test results instantly.
+                The AI explanation was clearer than my doctor&apos;s!&rdquo;
               </p>
             </blockquote>
             <div className="mt-4 flex items-center justify-center gap-2">
@@ -101,4 +101,4 @@ export default function EnhancedCTA() {
       </div>
     </section>
   );
-} 
+}

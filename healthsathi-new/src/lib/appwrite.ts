@@ -12,4 +12,4 @@ export const account = new Account(client);
 export const DATABASE_ID = 'HealthSathiMainContactUs'; // Database ID
 export const CONTACTS_COLLECTION_ID = 'HomePageContact'; // Collection ID for contact form submissions
 
-export { ID }; 
+export { ID };

@@ -14,4 +14,4 @@ export default function Hero() {
       {/* Rest of your hero content */}
     </div>
   );
-} 
+}
