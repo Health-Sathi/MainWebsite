@@ -5,10 +5,12 @@ import "./styles/logo.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/layout/Footer";
 import Script from "next/script";
-import { ChatProvider } from "@/context/ChatContext";
-import AIChat from "@/components/AIChat";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+});
 
 // Add JSON-LD structured data
 const jsonLd = {
@@ -45,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -53,6 +55,11 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" href="/images/cybernetic-recovery-chamber.jpg" as="image" />
+        <link rel="preload" href="/images/logo/healthsathi-logo.svg" as="image" />
+        
         {/* Social Media Links for SEO */}
         <link rel="me" href="https://www.facebook.com/people/HealthSathi/61564719285549/" />
         <link rel="me" href="https://x.com/Drfatafat" />
@@ -65,8 +72,9 @@ export default function RootLayout({
         <meta property="og:see_also" content="https://www.linkedin.com/company/healthsathi/" />
         <meta property="og:see_also" content="https://www.instagram.com/_healthsathi_/" />
         <meta property="og:see_also" content="https://www.youtube.com/@Health-Sathi" />
-        {/* iubenda Cookie Consent */}
-        <Script id="iubenda-config" strategy="afterInteractive">
+        
+        {/* iubenda Cookie Consent - Load with lower priority */}
+        <Script id="iubenda-config" strategy="lazyOnload">
           {`
             var _iub = _iub || [];
             _iub.csConfiguration = {"siteId":4037672,"cookiePolicyId":20806289,"lang":"en","storage":{"useSiteId":true}};
@@ -74,18 +82,19 @@ export default function RootLayout({
         </Script>
         <Script
           src="https://cs.iubenda.com/autoblocking/4037672.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           src="//cdn.iubenda.com/cs/gpp/stub.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           src="//cdn.iubenda.com/cs/iubenda_cs.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           async
         />
-        {/* Google Tag (gtag.js) */}
+        
+        {/* Google Tag (gtag.js) - Load after page load */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17066817175"
           strategy="afterInteractive"
@@ -98,7 +107,8 @@ export default function RootLayout({
             gtag('config', 'AW-17066817175');
           `}
         </Script>
-        {/* Google Analytics (gtag.js) */}
+        
+        {/* Google Analytics (gtag.js) - Load after page load */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-49DZ0JNCC4"
           strategy="afterInteractive"
@@ -117,14 +127,11 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <ChatProvider>
-          <Navbar />
-          <main className="min-h-screen bg-background pt-16">
-            {children}
-          </main>
-          <Footer />
-          <AIChat />
-        </ChatProvider>
+        <Navbar />
+        <main className="min-h-screen bg-background pt-20">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

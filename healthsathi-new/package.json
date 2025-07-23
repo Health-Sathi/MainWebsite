@@ -8,7 +8,9 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npx wrangler pages deploy out"
+    "deploy": "npx wrangler pages deploy out",
+    "optimize-images": "node scripts/optimize-images.js",
+    "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

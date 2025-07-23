@@ -120,18 +120,21 @@ const AboutUsPage = () => {
       role: 'Global Chief Marketing Officer',
       bio: 'Abhay Kumar Prashanth leads the global marketing strategy at HealthSathi, driving brand awareness and user engagement across international markets. With expertise in digital marketing and brand development, he plays a crucial role in expanding HealthSathi\'s reach and impact in the healthcare technology sector.',
       imageUrl: '/images/team/abhay_kumar_prashanth.jpeg',
+      imageLink: 'https://www.linkedin.com/in/abhay-kumar-prashanth-7bb280337/',
     },
     {
       name: 'Harivatsan Selvam',
       role: 'Director of Engineering',
       bio: 'Harivatsan Selvam is the Director of Engineering at HealthSathi, where he leads the development of accessible, impact-driven health tech solutions. He believes in "tech for all" and focuses on leveraging AI to improve lives and build a healthier, more equitable society.',
       imageUrl: '/images/team/harivatsan_selvam.jpeg',
+      imageLink: 'https://www.linkedin.com/in/harivatsan-selvam-69b85830b/',
     },
     {
       name: 'Joshith Reddy Aleti',
       role: 'Chief Technology Officer – AI/ML Operations',
       bio: 'Joshith Reddy Aleti, HealthSathi\'s Chief Technology Officer for AI/ML Operations, is a driving force behind the company\'s intelligent healthcare infrastructure. With hands-on experience building scalable AI systems and a track record of applying machine learning in real-world environments, Joshith transforms complex data into actionable health insights. From predictive models that anticipate patient needs to AI-driven platforms that simplify diagnostics, he leads with a mission to make healthcare smarter, faster, and more accessible. His passion lies not just in cutting-edge algorithms, but in solving real human problems through responsible and transparent AI.',
       imageUrl: '/images/team/joshith_reddy_aleti.jpeg',
+      imageLink: 'https://www.linkedin.com/in/joshith-reddy-aleti/',
     },
     {
       name: 'Aarya Gupta',
@@ -144,6 +147,14 @@ const AboutUsPage = () => {
       role: 'Head of App Development',
       bio: 'Leading HealthSathi\'s mobile and web application development with a focus on creating intuitive, user-friendly healthcare solutions.',
       imageUrl: '/images/team/placeholder.png',
+      imageLink: 'https://www.linkedin.com/in/charvik-m-a086a8288/',
+    },
+    {
+      name: 'Anjan Bellamkonda',
+      role: 'Chief of Development',
+      bio: 'Anjan Bellamkonda serves as the Chief of Development at HealthSathi, where he leads all aspects of website maintenance and ensures the platform remains robust, secure, and up-to-date.',
+      imageUrl: '/images/team/anjan_bellamkonda.jpg',
+      imageLink: 'https://www.linkedin.com/in/anjan-bellamkonda/',
     },
     /* Commented out intern section
     {
@@ -161,6 +172,7 @@ const AboutUsPage = () => {
       role: 'Business Advisor',
       bio: 'Tushar Joshi brings extensive business expertise to HealthSathi, guiding strategic initiatives and business development. With a strong background in entrepreneurship and business management, he provides valuable insights for scaling healthcare technology solutions globally.',
       imageUrl: '/images/advisory/tushar_joshi.jpeg',
+      imageLink: 'https://www.linkedin.com/in/joshi-tushar/',
     },
     {
       name: 'Dr. Vivek Rawal, M.D.',
@@ -179,6 +191,7 @@ const AboutUsPage = () => {
       role: 'UN Special Advisor',
       bio: 'Rani Hong serves as a UN Special Advisor, bringing global healthcare policy expertise to HealthSathi. Her extensive experience in international healthcare initiatives and human rights advocacy helps shape our mission to make healthcare accessible worldwide.',
       imageUrl: '/images/advisory/rani_hong.png',
+      imageLink: 'https://www.linkedin.com/in/ranihong/',
     },
     {
       name: 'Mamta Joshi',
@@ -191,6 +204,7 @@ const AboutUsPage = () => {
       role: 'Board of Advisor for Gen AI',
       bio: 'Rohit Panedka serves as Board of Advisor for Gen AI at HealthSathi, bringing cutting-edge artificial intelligence expertise to our healthcare solutions. As the Microsoft ATL lead, he provides strategic guidance on AI implementation, machine learning models, and generative AI technologies that power our intelligent healthcare platform.',
       imageUrl: '/images/advisory/Rohit_P.jpg',
+      imageLink: 'https://www.linkedin.com/in/rohit-panedka-8a49251/',
     },
   ];
 
@@ -366,14 +380,38 @@ const AboutUsPage = () => {
             {advisoryBoard.map((advisor) => (
               <div key={advisor.name} className="bg-brand-off-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="relative w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-brand-red-light">
-                  <Image
-                    src={advisor.imageUrl}
-                    alt={advisor.name}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                  />
+                  {advisor.imageLink ? (
+                    <a href={advisor.imageLink} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+                      <Image
+                        src={advisor.imageUrl}
+                        alt={advisor.name}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
+                    </a>
+                  ) : (
+                    <Image
+                      src={advisor.imageUrl}
+                      alt={advisor.name}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  )}
                 </div>
-                <h3 className="text-xl font-semibold text-brand-black mb-1">{advisor.name}</h3>
+                <h3 className="text-xl font-semibold text-brand-black mb-1">
+                  {advisor.imageLink ? (
+                    <a
+                      href={advisor.imageLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-brand-red-primary transition-colors underline"
+                    >
+                      {advisor.name}
+                    </a>
+                  ) : (
+                    advisor.name
+                  )}
+                </h3>
                 <p className="text-brand-red-primary font-medium">{advisor.role}</p>
                 <p className="text-brand-black text-sm leading-relaxed">{advisor.bio}</p>
               </div>

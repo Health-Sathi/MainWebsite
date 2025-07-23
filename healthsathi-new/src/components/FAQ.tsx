@@ -35,28 +35,28 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 sm:py-32 bg-secondary text-white">
+    <section className="py-24 sm:py-32 bg-secondary text-foreground">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-brand-red-primary">FAQ</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-base font-semibold leading-7 text-primary">FAQ</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Frequently Asked Questions
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
+          <p className="mt-6 text-lg leading-8 text-foreground-secondary">
             Find answers to common questions about our service and how it works.
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl divide-y divide-gray-700/50">
+        <div className="mx-auto mt-16 max-w-2xl divide-y divide-border">
           {faqs.map((faq, index) => (
             <div key={index} className="py-6">
               <button
                 className="flex w-full items-start justify-between text-left"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="text-base font-semibold leading-7 text-white">{faq.question}</span>
+                <span className="text-base font-semibold leading-7 text-foreground">{faq.question}</span>
                 <span className="ml-6 flex h-7 items-center">
                   <ChevronDownIcon
-                    className={`h-6 w-6 transform transition-transform text-brand-red-primary ${
+                    className={`h-6 w-6 transform transition-transform text-primary ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                     aria-hidden="true"
@@ -72,7 +72,7 @@ export default function FAQ() {
                     transition={{ duration: 0.2 }}
                     className="mt-2 pr-12"
                   >
-                    <p className="text-base leading-7 text-gray-300">{faq.answer}</p>
+                    <p className="text-base leading-7 text-foreground-secondary">{faq.answer}</p>
                   </motion.div>
                 )}
               </AnimatePresence>

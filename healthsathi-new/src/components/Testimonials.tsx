@@ -1,7 +1,9 @@
+"use client";
+
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import './Testimonials.css';
 
 const testimonials = [
   {
@@ -55,110 +57,117 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  
-  const goToNext = () => {
-    setActiveIndex((current) => (current + 1) % testimonials.length);
-  };
-  
-  const goToPrevious = () => {
-    setActiveIndex((current) => (current - 1 + testimonials.length) % testimonials.length);
-  };
+  const [isVisible, setIsVisible] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const element = document.querySelector('[data-testimonials-section]');
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Infinite auto-scroll logic
+  useEffect(() => {
+    let frame: number;
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+    let speed = 0.5; // px per frame
+
+    function animate() {
+      if (!isPaused && scrollContainer) {
+        // If reached halfway (since we duplicate the testimonials), reset to start
+        if (
+          scrollContainer.scrollLeft >=
+          scrollContainer.scrollWidth / 2
+        ) {
+          scrollContainer.scrollLeft = 0;
+        } else {
+          scrollContainer.scrollLeft += speed;
+        }
+      }
+      frame = requestAnimationFrame(animate);
+    }
+    frame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame);
+  }, [isPaused]);
 
   return (
-    <section className="py-24 sm:py-32 bg-white text-gray-900 overflow-hidden">
+    <section className="py-24 sm:py-32 bg-background text-foreground overflow-hidden" data-testimonials-section>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-brand-red-primary">Testimonials</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <motion.div 
+          className="mx-auto max-w-2xl lg:text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-base font-semibold leading-7 text-primary">Testimonials</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             What Our Users Say
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
             Don&apos;t just take our word for it. Here&apos;s what our users have to say about their experience with HealthSathi.
           </p>
-        </div>
-        
-        {/* Navigation area with arrows outside the carousel */}
-        <div className="flex items-center justify-center gap-4 mt-16">
-          {/* Left Navigation Arrow */}
-          <button 
-            onClick={goToPrevious}
-            className="z-10 bg-[#EE2A47] hover:bg-brand-red-dark text-white rounded-full p-2 shadow-lg focus:outline-none border-2 border-white flex-shrink-0"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeftIcon className="h-8 w-8" />
-          </button>
-          
-          {/* Carousel container */}
-          <div className="relative overflow-hidden flex-grow max-w-6xl">
-            <motion.div 
-              className="flex gap-8"
-              animate={{
-                x: `calc(-${activeIndex * 100}% - ${activeIndex * 2}rem)` 
-              }}
-              transition={{
-                ease: "easeInOut",
-                duration: 0.7
-              }}
-            >
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={`${testimonial.author.name}-${index}`}
-                  className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 flex flex-col justify-between rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-200"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <div>
-                    <div className="flex items-center gap-x-4">
-                      {testimonial.author.image ? (
-                        <Image
-                          className="h-10 w-10 rounded-full bg-gray-50 object-cover"
-                          src={testimonial.author.image}
-                          alt={testimonial.author.name}
-                          width={40}
-                          height={40}
-                        />
-                      ) : (
-                        <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-white font-bold">
-                          {testimonial.author.name.charAt(0)}
-                        </div>
-                      )}
-                      <div>
-                        <div className="font-semibold text-gray-900">{testimonial.author.name}</div>
-                        <div className="text-sm text-gray-600">{testimonial.author.role}</div>
+        </motion.div>
+        {/* Horizontally auto-scrolling testimonials, infinite loop, hide scrollbar unless hover */}
+        <div
+          className="mt-16 overflow-x-auto testimonials-scrollbar"
+          style={{ WebkitOverflowScrolling: 'touch' }}
+          ref={scrollRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className="flex flex-nowrap gap-8 cursor-grab">
+            {/* Duplicate testimonials for seamless infinite scroll */}
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <motion.div
+                key={`${testimonial.author.name}-${index}`}
+                className="flex-shrink-0 w-80 md:w-1/2 lg:w-1/3 flex flex-col justify-between rounded-2xl bg-card text-card-foreground p-8 shadow-lg ring-1 ring-border transform-gpu"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (index % testimonials.length) * 0.05, duration: 0.3 }}
+              >
+                <div>
+                  <div className="flex items-center gap-x-4">
+                    {testimonial.author.image ? (
+                      <img
+                        className="h-10 w-10 rounded-full bg-muted object-cover"
+                        src={testimonial.author.image}
+                        alt={testimonial.author.name}
+                        width={40}
+                        height={40}
+                      />
+                    ) : (
+                      <div className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground font-bold">
+                        {testimonial.author.name.charAt(0)}
                       </div>
+                    )}
+                    <div>
+                      <div className="font-semibold text-foreground">{testimonial.author.name}</div>
+                      <div className="text-sm text-foreground-secondary">{testimonial.author.role}</div>
                     </div>
-                    <p className="mt-6 text-gray-600">{testimonial.content}</p>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
+                  <p className="mt-6 text-foreground-secondary">{testimonial.content}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-          
-          {/* Right Navigation Arrow */}
-          <button 
-            onClick={goToNext}
-            className="z-10 bg-[#EE2A47] hover:bg-brand-red-dark text-white rounded-full p-2 shadow-lg focus:outline-none border-2 border-white flex-shrink-0"
-            aria-label="Next testimonial"
-          >
-            <ChevronRightIcon className="h-8 w-8" />
-          </button>
         </div>
-        
-        {/* Navigation Dots with improved visibility */}
-        <div className="flex justify-center gap-3 mt-8 bg-gray-100 py-2 px-4 rounded-full inline-block mx-auto">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`h-3 w-3 rounded-full ${
-                activeIndex === index ? 'bg-brand-red-primary' : 'bg-gray-400'
-              } hover:bg-brand-red-light transition-colors`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
-        </div>
+        {/* If hydration errors persist, ensure all client-only logic is inside useEffect or useState. */}
       </div>
     </section>
   );

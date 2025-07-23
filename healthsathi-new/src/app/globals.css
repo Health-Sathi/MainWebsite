@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
 :root {
+  /* Light theme colors */
   --background: #ffffff;
   --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #ee2b47;
+  --primary-foreground: #ffffff;
+  --secondary: #f6f6f6;
+  --secondary-foreground: #111111;
+  --muted: #f6f6f6;
+  --muted-foreground: #666666;
+  --accent: #f6f6f6;
+  --accent-foreground: #111111;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #dedede;
+  --input: #ffffff;
+  --ring: #ee2b47;
+  --radius: 0.5rem;
+  
+  /* Brand colors */
   --brand-red: #ee2b47;
   --brand-red-light: #f55a78;
   --brand-red-dark: #d62642;
@@ -24,24 +45,375 @@
   --bg-brand-red-senary: #7a0025;
   --bg-brand-red-septenary: #5b0020;
   
+  /* Text colors for clarity */
+  --text-primary: #111111;
+  --text-secondary: #333333;
+  --text-tertiary: #666666;
+  --text-inverse: #ffffff;
+  --text-muted: #888888;
+  
+  /* Background colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f6f6;
+  --bg-tertiary: #f0f0f0;
+  --bg-inverse: #111111;
+  
+  /* Border colors */
+  --border-light: #dedede;
+  --border-medium: #cccccc;
+  --border-dark: #999999;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme colors */
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card: #111111;
+    --card-foreground: #ededed;
+    --popover: #111111;
+    --popover-foreground: #ededed;
+    --primary: #ee2b47;
+    --primary-foreground: #ffffff;
+    --secondary: #1a1a1a;
+    --secondary-foreground: #ededed;
+    --muted: #1a1a1a;
+    --muted-foreground: #a0a0a0;
+    --accent: #1a1a1a;
+    --accent-foreground: #ededed;
+    --destructive: #dc2626;
+    --destructive-foreground: #ffffff;
+    --border: #333333;
+    --input: #111111;
+    --ring: #ee2b47;
+    
+    /* Text colors for clarity in dark mode */
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-tertiary: #c0c0c0;
+    --text-inverse: #111111;
+    --text-muted: #888888;
+    
+    /* Background colors for dark mode */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-tertiary: #1a1a1a;
+    --bg-inverse: #ffffff;
+    
+    /* Border colors for dark mode */
+    --border-light: #333333;
+    --border-medium: #444444;
+    --border-dark: #555555;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Account for fixed navbar */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+}
+
+/* Optimize animations */
+.transform-gpu {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Reduce layout shifts */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Optimize scroll performance */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Reduce paint operations */
+.optimize-paint {
+  will-change: auto;
+  contain: layout style paint;
+}
+
+/* Optimize animations for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize for high DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .optimize-images {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Critical CSS for above-the-fold content */
+.critical-content {
+  contain: layout style;
+}
+
+/* Optimize button interactions */
+button {
+  touch-action: manipulation;
+}
+
+/* Ensure fixed navbar has no gaps */
+header[class*="fixed"] {
+  margin: 0 !important;
+  padding: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Ensure no gaps between sections and navbar */
+section {
+  margin-top: 0 !important;
+}
+
+/* Fix for black sections that might show white line */
+section.bg-black {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure main content has proper spacing for fixed navbar */
+main {
+  margin-top: 0 !important;
+}
+
+/* Optimize focus styles */
+.focus-visible:focus {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Optimize loading states */
+.loading-skeleton {
+  background: linear-gradient(90deg, var(--muted) 25%, var(--border) 50%, var(--muted) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Technology Partners Scrolling Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+/* Pause animation on hover */
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Theme-aware text utilities */
+.text-theme-primary {
+  color: var(--text-primary);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+
+.text-theme-tertiary {
+  color: var(--text-tertiary);
+}
+
+.text-theme-muted {
+  color: var(--text-muted);
+}
+
+.text-theme-inverse {
+  color: var(--text-inverse);
+}
+
+/* Theme-aware background utilities */
+.bg-theme-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-theme-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-theme-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.bg-theme-inverse {
+  background-color: var(--bg-inverse);
+}
+
+/* Theme-aware border utilities */
+.border-theme-light {
+  border-color: var(--border-light);
+}
+
+.border-theme-medium {
+  border-color: var(--border-medium);
+}
+
+.border-theme-dark {
+  border-color: var(--border-dark);
+}
+
+/* Ensure proper contrast for all text elements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--primary);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--brand-red-light);
+}
+
+/* Ensure form elements are theme-aware */
+input, textarea, select {
+  background-color: var(--input);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--ring);
+  outline-color: var(--ring);
+}
+
+/* Ensure buttons have proper contrast */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-red-dark);
+  border-color: var(--brand-red-dark);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--muted);
+  border-color: var(--border-medium);
+}
+
+/* Card styles with proper theme support */
+.card, .section, .tile {
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.06), 0 1.5px 4px 0 rgba(0,0,0,0.03);
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Ensure proper contrast for icons */
+.icon {
+  color: var(--text-secondary);
+}
+
+.icon-primary {
+  color: var(--primary);
+}
+
+.icon-muted {
+  color: var(--text-muted);
+}
+
+.force-white {
+  color: #fff !important;
 }
