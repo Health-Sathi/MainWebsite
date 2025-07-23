@@ -45,14 +45,14 @@ const item = {
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 sm:py-32 bg-gray-50">
+    <section className="py-24 sm:py-32 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">Simple Process</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-base font-semibold leading-7 text-foreground">Simple Process</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             How HealthSathi Works
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-foreground-secondary">
             Get your medical reports analyzed in three simple steps. Our AI-powered platform makes it easy to understand your health data.
           </p>
         </div>
@@ -66,14 +66,14 @@ export default function HowItWorks() {
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
             {steps.map((step) => (
               <motion.div key={step.name} variants={item} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-red-primary">
-                    <step.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+                    <step.icon className="h-6 w-6 text-primary-foreground" aria-hidden="true" />
                   </div>
-                  <span className="text-brand-red-primary">{step.id}</span>
+                  <span className="text-primary">{step.id}</span>
                   {step.name}
                 </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-foreground-secondary">
                   <p className="flex-auto">{step.description}</p>
                 </dd>
               </motion.div>

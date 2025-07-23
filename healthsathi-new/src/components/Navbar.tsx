@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -16,10 +16,26 @@ const navigation = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Always use solid black background to prevent white lines
+  const navbarBackground = 'bg-black';
 
   return (
-    <header className="bg-black py-6">
-      <nav className="container mx-auto flex items-center justify-between px-3 lg:px-6" aria-label="Global">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navbarBackground} ${
+      isScrolled ? 'shadow-lg border-b border-gray-800' : ''
+    }`} style={{ marginTop: 0, marginLeft: 0, marginRight: 0, minHeight: '80px' }}>
+      <nav className="container mx-auto flex items-center justify-between px-3 lg:px-6 py-4 lg:py-6" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="flex items-center gap-2">
             <span
@@ -46,7 +62,7 @@ export default function Navbar() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2.5 text-brand-white hover:text-brand-red-light"
+            className="inline-flex items-center justify-center rounded-md p-2.5 text-brand-white hover:text-brand-red-light transition-colors"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -112,7 +128,7 @@ export default function Navbar() {
             </Link>
             <button
               type="button"
-              className="rounded-full p-2.5 text-brand-white hover:text-white hover:bg-brand-red-dark"
+              className="rounded-full p-2.5 text-brand-white hover:text-white hover:bg-brand-red-dark transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>

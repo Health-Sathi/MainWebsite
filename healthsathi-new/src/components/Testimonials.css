@@ -1,0 +1,15 @@
+/* Hide horizontal scrollbar always */
+.testimonials-scrollbar {
+  scrollbar-width: none !important; /* Firefox */
+}
+.testimonials-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+.testimonials-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+.testimonials-scrollbar::-webkit-scrollbar-track {
+  background: var(--secondary);
+  border-radius: 4px;
+} 

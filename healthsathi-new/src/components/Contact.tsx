@@ -8,7 +8,7 @@ const contactInfo = [
   {
     name: 'Email',
     description: (
-      <a href="mailto:support@health-sathi.org" className="hover:text-brand-red-primary transition-colors">
+      <a href="mailto:support@health-sathi.org" className="hover:text-primary transition-colors">
         support@health-sathi.org
       </a>
     ),
@@ -17,7 +17,7 @@ const contactInfo = [
   {
     name: 'Phone',
     description: (
-      <a href="tel:+17703620543" className="hover:text-brand-red-primary transition-colors">
+      <a href="tel:+17703620543" className="hover:text-primary transition-colors">
         +1 (770) 362-0543
       </a>
     ),
@@ -97,11 +97,11 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-secondary text-white">
+    <section className="py-24 sm:py-32 bg-secondary text-foreground">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-brand-red-primary">Contact Us</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-base font-semibold leading-7 text-primary">Contact Us</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Get in Touch
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-300">
@@ -120,12 +120,12 @@ export default function Contact() {
               <div className="space-y-8">
                 {contactInfo.map((item) => (
                   <div key={item.name} className="flex items-center gap-x-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red-primary">
-                      <item.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary">
+                      <item.icon className="h-6 w-6 text-primary-foreground" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="text-base font-semibold leading-7 text-white">{item.name}</h3>
-                      <p className="mt-2 text-base leading-7 text-gray-300">{item.description}</p>
+                      <h3 className="text-base font-semibold leading-7 text-foreground">{item.name}</h3>
+                      <p className="mt-2 text-base leading-7 text-foreground-secondary">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -159,14 +159,14 @@ export default function Contact() {
                   required
                   style={{
                     fontFamily: 'Inter, sans-serif',
-                    color: 'rgb(0, 0, 0)',
+                    color: 'var(--foreground)',
                     fontSize: '14px',
                     margin: '0px 0px 10px',
                     width: '100%',
                     maxWidth: '300px',
                     minWidth: '100px',
-                    background: 'rgb(255, 255, 255)',
-                    border: '1px solid rgb(209, 213, 219)',
+                    background: 'var(--input)',
+                    border: '1px solid var(--border)',
                     boxSizing: 'border-box',
                     boxShadow: 'rgba(0, 0, 0, 0.05) 0px 1px 2px',
                     borderRadius: '6px',
@@ -175,10 +175,10 @@ export default function Contact() {
                 />
                 <button
                   type="submit"
-                  className="newsletter-form-button w-full max-w-[300px] h-[38px] flex items-center justify-center text-white font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="newsletter-form-button w-full max-w-[300px] h-[38px] flex items-center justify-center text-primary-foreground font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={status === 'loading'}
                   style={{
-                    background: '#EE2A47',
+                    background: 'var(--primary)',
                     fontFamily: 'Inter, sans-serif',
                     padding: '9px 17px',
                     boxShadow: 'rgba(0, 0, 0, 0.05) 0px 1px 2px',
@@ -198,22 +198,16 @@ export default function Contact() {
                 <div 
                   className="newsletter-success"
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '100%'
+                    marginTop: '10px',
+                    padding: '10px',
+                    backgroundColor: 'var(--accent)',
+                    color: 'var(--accent-foreground)',
+                    borderRadius: '6px',
+                    fontSize: '14px',
+                    textAlign: 'center'
                   }}
                 >
-                  <p 
-                    className="newsletter-success-message"
-                    style={{
-                      fontFamily: 'Inter, sans-serif',
-                      color: 'rgb(0, 0, 0)',
-                      fontSize: '14px'
-                    }}
-                  >
-                    Thanks for subscribing!
-                  </p>
+                  Thank you for subscribing! We'll keep you updated with the latest health insights.
                 </div>
               )}
 
@@ -221,45 +215,17 @@ export default function Contact() {
                 <div 
                   className="newsletter-error"
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '100%'
+                    marginTop: '10px',
+                    padding: '10px',
+                    backgroundColor: 'var(--destructive)',
+                    color: 'var(--destructive-foreground)',
+                    borderRadius: '6px',
+                    fontSize: '14px',
+                    textAlign: 'center'
                   }}
                 >
-                  <p 
-                    className="newsletter-error-message"
-                    style={{
-                      fontFamily: 'Inter, sans-serif',
-                      color: 'rgb(185, 28, 28)',
-                      fontSize: '14px'
-                    }}
-                  >
-                    {errorMessage}
-                  </p>
+                  {errorMessage}
                 </div>
-              )}
-
-              {status !== 'idle' && (
-                <button
-                  type="button"
-                  onClick={handleReset}
-                  className="newsletter-back-button"
-                  style={{
-                    color: '#6b7280',
-                    font: '14px Inter, sans-serif',
-                    margin: '10px auto',
-                    textAlign: 'center',
-                    display: 'block',
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
-                  onMouseOver={(e) => e.currentTarget.style.textDecoration = 'underline'}
-                  onMouseOut={(e) => e.currentTarget.style.textDecoration = 'none'}
-                >
-                  ← Back
-                </button>
               )}
             </motion.div>
           </div>
