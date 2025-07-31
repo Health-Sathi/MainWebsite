@@ -35,7 +35,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 sm:py-32 bg-secondary text-foreground">
+    <section className="py-24 sm:py-32 bg-background text-foreground overflow-hidden" data-testimonials-section>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">FAQ</h2>
@@ -43,7 +43,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </p>
           <p className="mt-6 text-lg leading-8 text-foreground-secondary">
-            Find answers to common questions about our service and how it works.
+            Find answers to common questions about HealthSathi and our services.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl divide-y divide-border">

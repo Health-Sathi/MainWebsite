@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "./styles/logo.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/layout/Footer";
+import FontLoader from "@/components/FontLoader";
 import Script from "next/script";
 
 const inter = Inter({ 
@@ -127,6 +127,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <FontLoader />
         <Navbar />
         <main className="min-h-screen bg-background pt-20">
           {children}

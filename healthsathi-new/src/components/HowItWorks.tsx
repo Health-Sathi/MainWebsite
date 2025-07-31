@@ -45,10 +45,10 @@ const item = {
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 sm:py-32 bg-secondary">
+    <section className="py-24 sm:py-32 bg-background text-foreground">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-foreground">Simple Process</h2>
+          <h2 className="text-base font-semibold leading-7 text-primary">Simple Process</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             How HealthSathi Works
           </p>

@@ -97,15 +97,15 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-secondary text-foreground">
+    <section className="py-24 sm:py-32 bg-background text-foreground">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">Contact Us</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Get in Touch
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            Have questions about our services? We&apos;re here to help. Please email us at <a href="mailto:support@health-sathi.org" className="text-brand-red-primary underline">support@health-sathi.org</a> or call <a href="tel:+17703620543" className="text-brand-red-primary underline">+1 (770) 362-0543</a>.
+          <p className="mt-6 text-lg leading-8 text-foreground-secondary">
+            Have questions about HealthSathi? We're here to help you understand your health better.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

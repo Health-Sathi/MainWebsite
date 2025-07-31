@@ -24,13 +24,13 @@ export const metadata: Metadata = {
         url: '/images/team/joshith_reddy_aleti.jpeg',
         width: 800,
         height: 800,
-        alt: 'Joshith Reddy Aleti - CTO of AI/ML Operations at HealthSathi',
+        alt: 'Joshith Reddy Aleti - Chief Artificial Intelligence Officer',
       },
       {
         url: '/images/team/aarya_gupta.jpg',
         width: 800,
         height: 800,
-        alt: 'Aarya Gupta - Director of Applied Science at HealthSathi',
+        alt: 'Aarya Gupta - Chief Scientific Officer at HealthSathi',
       },
       {
         url: '/images/advisory/tushar_joshi.jpeg',
@@ -97,7 +97,42 @@ const jsonLd = {
       '@type': 'Person',
       name: 'Charvik Morampudi',
       jobTitle: 'Head of App Development',
-    }
+    },
+    {
+      '@type': 'Person',
+      name: 'Dileep Tata',
+      jobTitle: 'Chief Financial Officer',
+    },
+    {
+      '@type': 'Person',
+      name: 'Anjan Bellamkonda',
+      jobTitle: 'Chief of Development',
+    },
+    {
+      '@type': 'Person',
+      name: 'Harivatsan Selvam',
+      jobTitle: 'Chief Technology and Innovation Officer',
+    },
+    {
+      '@type': 'Person',
+      name: 'Abhay Kumar Prashanth',
+      jobTitle: 'Global Chief Marketing Officer',
+    },
+    {
+      '@type': 'Person',
+      name: 'Gayatri Rawel, Esq., LLB',
+      jobTitle: 'Legal Advisor',
+    },
+    {
+      '@type': 'Person',
+      name: 'Rani Hong',
+      jobTitle: 'UN Special Advisor',
+    },
+    {
+      '@type': 'Person',
+      name: 'Mamta Joshi',
+      jobTitle: 'Technical Advisor',
+    },
   ],
   sameAs: [
     'https://twitter.com/healthsathi',
@@ -124,21 +159,21 @@ const AboutUsPage = () => {
     },
     {
       name: 'Harivatsan Selvam',
-      role: 'Director of Engineering',
-      bio: 'Harivatsan Selvam is the Director of Engineering at HealthSathi, where he leads the development of accessible, impact-driven health tech solutions. He believes in "tech for all" and focuses on leveraging AI to improve lives and build a healthier, more equitable society.',
+      role: 'Chief Technology and Innovation Officer',
+      bio: 'Harivatsan Selvam is the Chief Technology and Innovation Officer at HealthSathi, where he leads the development of accessible, impact-driven health tech solutions. He believes in "tech for all" and focuses on leveraging AI to improve lives and build a healthier, more equitable society.',
       imageUrl: '/images/team/harivatsan_selvam.jpeg',
       imageLink: 'https://www.linkedin.com/in/harivatsan-selvam-69b85830b/',
     },
     {
       name: 'Joshith Reddy Aleti',
-      role: 'Chief Technology Officer – AI/ML Operations',
-      bio: 'Joshith Reddy Aleti, HealthSathi\'s Chief Technology Officer for AI/ML Operations, is a driving force behind the company\'s intelligent healthcare infrastructure. With hands-on experience building scalable AI systems and a track record of applying machine learning in real-world environments, Joshith transforms complex data into actionable health insights. From predictive models that anticipate patient needs to AI-driven platforms that simplify diagnostics, he leads with a mission to make healthcare smarter, faster, and more accessible. His passion lies not just in cutting-edge algorithms, but in solving real human problems through responsible and transparent AI.',
+      role: 'Chief Artificial Intelligence Officer',
+      bio: 'Joshith Reddy Aleti, HealthSathi\'s Chief Artificial Intelligence Officer, is a driving force behind the company\'s intelligent healthcare infrastructure. With hands-on experience building scalable AI systems and a track record of applying machine learning in real-world environments, Joshith transforms complex data into actionable health insights. From predictive models that anticipate patient needs to AI-driven platforms that simplify diagnostics, he leads with a mission to make healthcare smarter, faster, and more accessible. His passion lies not just in cutting-edge algorithms, but in solving real human problems through responsible and transparent AI.',
       imageUrl: '/images/team/joshith_reddy_aleti.jpeg',
       imageLink: 'https://www.linkedin.com/in/joshith-reddy-aleti/',
     },
     {
       name: 'Aarya Gupta',
-      role: 'Director of Applied Science',
+      role: 'Chief Scientific Officer',
       bio: 'Aarya Gupta is a student researcher and science communicator passionate about bridging the gap between complex biomedical innovations and public understanding. With experience in computational biology, cancer research, and data-driven health solutions, he brings a commitment to clarity, equity, and accessibility in healthcare. At Health Saathi, he aims to help make science and medicine more approachable for all communities.',
       imageUrl: '/images/team/aarya_gupta.jpg',
     },
@@ -146,7 +181,7 @@ const AboutUsPage = () => {
       name: 'Charvik Morampudi',
       role: 'Head of App Development',
       bio: 'Leading HealthSathi\'s mobile and web application development with a focus on creating intuitive, user-friendly healthcare solutions.',
-      imageUrl: '/images/team/placeholder.png',
+      imageUrl: '/images/team/charvik_morampudi.jpg',
       imageLink: 'https://www.linkedin.com/in/charvik-m-a086a8288/',
     },
     {
@@ -155,6 +190,13 @@ const AboutUsPage = () => {
       bio: 'Anjan Bellamkonda serves as the Chief of Development at HealthSathi, where he leads all aspects of website maintenance and ensures the platform remains robust, secure, and up-to-date.',
       imageUrl: '/images/team/anjan_bellamkonda.jpg',
       imageLink: 'https://www.linkedin.com/in/anjan-bellamkonda/',
+    },
+    {
+      name: 'Dileep Tata',
+      role: 'Chief Financial Officer',
+      bio: 'Dileep Tata is the Chief Financial Officer at HealthSathi, where he oversees financial strategy, fundraising, and long-term sustainability. With a strong background in entrepreneurship and social impact, Dileep brings a mission-driven approach to healthtech innovation. His leadership bridges business and impact, ensuring HealthSathi\'s growth aligns with its goal of expanding access to quality care. Dileep is also deeply involved in education, public speaking, and youth leadership, and is passionate about using technology to solve real-world problems at scale.',
+      imageUrl: '/images/team/dileep_tata.jpg',
+      imageLink: 'https://www.linkedin.com/in/dileep-tata-868676345/',
     },
     /* Commented out intern section
     {
@@ -209,12 +251,12 @@ const AboutUsPage = () => {
   ];
 
   const coreValues = [
-    { name: 'Passion', color: 'bg-brand-red-primary', textColor: 'text-brand-white', icon: FaFire },
-    { name: 'Integrity', color: 'bg-brand-red-dark', textColor: 'text-brand-white', icon: FaShieldAlt },
+    { name: 'Passion', color: 'bg-brand-red-light', textColor: 'text-brand-black', icon: FaFire },
+    { name: 'Integrity', color: 'bg-brand-red-light', textColor: 'text-brand-black', icon: FaShieldAlt },
     { name: 'Results', color: 'bg-brand-red-light', textColor: 'text-brand-black', icon: FaChartLine },
-    { name: 'Commitment', color: 'bg-brand-black', textColor: 'text-brand-white', icon: FaHandshake },
-    { name: 'Diversity', color: 'bg-brand-red-primary', textColor: 'text-brand-white', icon: FaUsers },
-    { name: 'Growth', color: 'bg-brand-gray-light', textColor: 'text-brand-black', icon: FaSeedling },
+    { name: 'Commitment', color: 'bg-brand-red-light', textColor: 'text-brand-black', icon: FaHandshake },
+    { name: 'Diversity', color: 'bg-brand-red-light', textColor: 'text-brand-black', icon: FaUsers },
+    { name: 'Growth', color: 'bg-brand-red-light', textColor: 'text-brand-black', icon: FaSeedling },
     { name: 'Openness', color: 'bg-brand-red-light', textColor: 'text-brand-black', icon: FaDoorOpen },
   ];
 
@@ -278,18 +320,18 @@ const AboutUsPage = () => {
           <p className="text-lg text-brand-black text-center max-w-2xl mx-auto mb-12">
             At HealthSathi, we stand by our commitment to quality, integrity, and accessibility in healthcare.
           </p>
-          <div className="max-w-4xl mx-auto">
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 text-center">
+          <div className="max-w-6xl mx-auto">
+            <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-3 sm:gap-4 md:gap-6 text-center">
               {coreValues.map((value) => {
                 const Icon = value.icon;
                 return (
                   <div
                     key={value.name}
-                    className={`flex flex-col items-center justify-center p-4 rounded-2xl shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${value.color} ${value.textColor}`}
-                    style={{ minHeight: '120px' }}
+                    className={`core-value-tile flex flex-col items-center justify-center p-2 sm:p-3 md:p-4 rounded-2xl shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${value.color} ${value.textColor}`}
+                    style={{ minHeight: '90px', maxHeight: '110px' }}
                   >
-                    <Icon className="mb-2 text-2xl md:text-3xl" />
-                    <h4 className="font-semibold text-lg md:text-xl">{value.name}</h4>
+                    <Icon className="mb-1 sm:mb-2 text-lg sm:text-xl md:text-2xl lg:text-3xl" />
+                    <h4 className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg leading-tight break-words px-1">{value.name}</h4>
                   </div>
                 );
               })}

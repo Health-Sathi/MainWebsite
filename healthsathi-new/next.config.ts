@@ -10,8 +10,9 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   experimental: {
-    optimizeCss: false,
+    optimizeCss: true,
     scrollRestoration: true,
+    optimizePackageImports: ['react-icons'],
   },
   compress: true,
   poweredByHeader: false,
@@ -20,7 +21,24 @@ const nextConfig: NextConfig = {
   output: 'export',
   distDir: 'out',
   assetPrefix: undefined,
-  basePath: ''
+  basePath: '',
+  // Performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Optimize CSS loading
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      // Optimize CSS extraction
+      config.optimization.splitChunks.cacheGroups.styles = {
+        name: 'styles',
+        test: /\.(css|scss)$/,
+        chunks: 'all',
+        enforce: true,
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;

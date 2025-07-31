@@ -39,13 +39,13 @@ const trustBadges = [
 
 export default function TrustBadges() {
   return (
-    <section className="py-12 bg-secondary border-t border-border">
+    <section className="py-12 bg-background border-t border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-8">
           <h3 className="text-lg font-semibold text-foreground mb-2">
             Trusted & Secure Healthcare Platform
           </h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground-secondary">
             Your health data security and accuracy are our top priorities
           </p>
         </div>
@@ -58,13 +58,13 @@ export default function TrustBadges() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center p-4 bg-card rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow"
+              className="text-center p-4 bg-secondary rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow"
             >
               <badge.icon className="w-8 h-8 text-brand-red-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-sm text-card-foreground mb-1">
+              <h4 className="font-semibold text-sm text-foreground mb-1">
                 {badge.title}
               </h4>
-              <p className="text-xs text-muted-foreground leading-tight">
+              <p className="text-xs text-foreground-secondary leading-tight">
                 {badge.description}
               </p>
             </motion.div>
