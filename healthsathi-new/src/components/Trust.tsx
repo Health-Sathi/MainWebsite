@@ -48,7 +48,7 @@ const item = {
 
 export default function Trust() {
   return (
-    <section className="py-24 sm:py-32 bg-secondary text-foreground">
+    <section className="py-24 sm:py-32 bg-background text-foreground">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-primary">Security & Privacy</h2>

@@ -128,7 +128,7 @@ export default function Home() {
       </div>
 
       {/* Made With The Help Of Section */}
-      <section aria-label="Technology Partners" className="bg-black py-12" style={{ marginTop: 0, paddingTop: '80px' }}>
+      <section aria-label="Technology Partners" className="bg-black pt-32 pb-12" style={{ paddingTop: '2rem !important', marginTop: '2rem' }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-lg font-semibold tracking-widest mb-8 force-white">
             Technology Partners
@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* What is HealthSathi? Section */}
-      <section className="bg-secondary py-8 sm:py-12">
+      <section className="bg-background py-8 sm:py-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -188,7 +188,7 @@ export default function Home() {
                 href="/about-us"
                 className="rounded-md border border-primary bg-transparent px-6 py-3 text-sm font-semibold text-primary shadow-sm hover:bg-primary hover:text-primary-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors duration-200"
               >
-                Learn More
+                Learn About HealthSathi
               </Link>
             </div>
           </div>

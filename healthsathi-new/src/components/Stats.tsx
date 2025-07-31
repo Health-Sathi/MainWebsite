@@ -59,40 +59,25 @@ export default function Stats() {
   }, []);
 
   return (
-    <section className="py-8 sm:py-10 bg-secondary" data-stats-section>
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate={isVisible ? "show" : "hidden"}
-          className="mx-auto max-w-2xl lg:max-w-none"
-        >
-          <dl className="grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <motion.div 
-                key={stat.id} 
-                variants={item} 
-                className="flex flex-col bg-card text-card-foreground p-6 transform-gpu border border-border"
-              >
-                <dt className="text-sm font-semibold leading-6 text-foreground">{stat.name}</dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-foreground">
-                  {stat.isText ? (
-                    stat.value
-                  ) : (
-                    <CountUp
-                      end={stat.value as number}
-                      suffix={stat.suffix}
-                      duration={stat.duration || 2}
-                      enableScrollSpy
-                      scrollSpyOnce
-                      delay={0}
-                    />
-                  )}
-                </dd>
-              </motion.div>
-            ))}
-          </dl>
-        </motion.div>
+    <section className="py-8 sm:py-10 bg-background" data-stats-section>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+          {stats.map((stat) => (
+            <motion.div
+              key={stat.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="mx-auto flex max-w-xs flex-col gap-y-4"
+            >
+              <dt className="text-base leading-7 text-foreground-secondary">{stat.name}</dt>
+              <dd className="order-first text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
+                {stat.value}
+              </dd>
+            </motion.div>
+          ))}
+        </dl>
       </div>
     </section>
   );

@@ -31,7 +31,7 @@ export default function CTA() {
             </a>
             <a href="/learn-more"
                className="text-sm font-semibold leading-6 text-brand-white hover:text-brand-red-light hover:scale-105 transition-all duration-300">
-              Learn More <span aria-hidden="true">→</span>
+              Learn About Our Services <span aria-hidden="true">→</span>
             </a>
           </div>
         </motion.div>
