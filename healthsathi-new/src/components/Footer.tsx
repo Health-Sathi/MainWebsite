@@ -14,7 +14,7 @@ const Footer = () => {
   const contactInfo = {
     address: 'Based in the USA and India',
     email: 'support@health-sathi.org',
-    phone: '+1 (770) 376-5867',
+    phone: '+1 (770) 362-0543',
   };
 
   return (
