@@ -30,7 +30,7 @@ const Footer = () => {
             <address className="text-sm not-italic">
               <p>Address: Based in the USA and India</p>
               <p>Email: <a href="mailto:jaytirthjoshi@outlook.com" className="hover:text-brand-red-primary transition-colors">jaytirthjoshi@outlook.com</a></p>
-              <p>Phone: <a href="tel:+17703765867" className="hover:text-brand-red-primary transition-colors">+1 (770) 376-5867</a></p>
+              <p>Phone: <a href="tel:+17703620543" className="hover:text-brand-red-primary transition-colors">+1 (770) 362-0543</a></p>
             </address>
           </div>
         </div>

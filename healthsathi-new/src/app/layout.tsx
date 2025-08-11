@@ -29,7 +29,7 @@ const jsonLd = {
   ],
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+1-770-376-5867',
+    telephone: '+1-770-362-0543',
     email: 'Support@health-sathi.org',
     contactType: 'customer service',
     availableLanguage: 'English'
