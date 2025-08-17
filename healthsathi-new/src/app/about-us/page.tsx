@@ -148,7 +148,7 @@ const AboutUsPage = () => {
       role: 'Founder Of HealthSathi, Chief Executive Officer and Chairman',
       bio: 'Jaytirth Joshi, the founder of HealthSathi, is a high school student driven to make healthcare accessible and understandable for all. Inspired by his medical internships, he created Dr. Fatafat, a tool to simplify medical reports and provide free, confidential health insights.',
       imageUrl: '/images/team/jaytirth_joshi.png',
-      imageLink: 'https://jay.health-sathi.org',
+      imageLink: 'https://www.linkedin.com/in/jaytirthjoshi/',
     },
     {
       name: 'Abhay Kumar Prashanth',
