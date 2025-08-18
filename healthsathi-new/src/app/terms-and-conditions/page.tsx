@@ -93,7 +93,7 @@ const TermsAndConditionsPage = () => {
 
         <h2 className="text-2xl font-semibold text-brand-red-primary mt-8 mb-4">12. Regulatory and Legal Compliance</h2>
         <ul className="list-disc pl-6 space-y-2 mb-4">
-          <li>HealthSathi operates as a nonprofit healthcare technology provider and strives to comply with relevant privacy, data protection, and health information standards including:
+          <li>HealthSathi operates as a healthcare technology company and strives to comply with relevant privacy, data protection, and health information standards including:
             <ul className="list-disc pl-6 space-y-2">
               <li>U.S. HIPAA and FTC Health Breach Notification Rule (where applicable)</li>
               <li>India's Digital Personal Data Protection Act (DPDP Act)</li>

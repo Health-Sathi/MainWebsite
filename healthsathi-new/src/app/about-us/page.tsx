@@ -194,7 +194,7 @@ const AboutUsPage = () => {
     {
       name: 'Dileep Tata',
       role: 'Chief Financial Officer',
-      bio: 'Dileep Tata is the Chief Financial Officer at HealthSathi, where he oversees financial strategy, fundraising, and long-term sustainability. With a strong background in entrepreneurship and social impact, Dileep brings a mission-driven approach to healthtech innovation. His leadership bridges business and impact, ensuring HealthSathi\'s growth aligns with its goal of expanding access to quality care. Dileep is also deeply involved in education, public speaking, and youth leadership, and is passionate about using technology to solve real-world problems at scale.',
+      bio: 'Dileep Tata is the Chief Financial Officer at HealthSathi, where he oversees financial strategy, fundraising, and long-term sustainability. With a strong background in entrepreneurship and business development, Dileep brings a results-driven approach to healthtech innovation. His leadership bridges business strategy and product development, ensuring HealthSathi\'s growth aligns with its goal of expanding healthcare accessibility. Dileep is also deeply involved in business development, strategic partnerships, and scaling technology solutions to solve real-world healthcare challenges.',
       imageUrl: '/images/team/dileep_tata.jpg',
       imageLink: 'https://www.linkedin.com/in/dileep-tata-868676345/',
     },
@@ -231,7 +231,7 @@ const AboutUsPage = () => {
     {
       name: 'Rani Hong',
       role: 'UN Special Advisor',
-      bio: 'Rani Hong serves as a UN Special Advisor, bringing global healthcare policy expertise to HealthSathi. Her extensive experience in international healthcare initiatives and human rights advocacy helps shape our mission to make healthcare accessible worldwide.',
+      bio: 'Rani Hong serves as a UN Special Advisor, bringing global healthcare policy expertise to HealthSathi. Her extensive experience in international healthcare initiatives and policy development helps shape our strategic vision to make healthcare technology accessible worldwide.',
       imageUrl: '/images/advisory/rani_hong.png',
       imageLink: 'https://www.linkedin.com/in/ranihong/',
     },
@@ -353,7 +353,7 @@ const AboutUsPage = () => {
             <div>
               <h3 className="text-3xl font-bold text-brand-red-primary mb-4">Our Mission</h3>
               <p className="text-lg text-brand-black leading-relaxed">
-                Our mission is to simplify medical data through AI, making healthcare insights accessible to all, anytime and anywhere.
+                Our mission is to simplify medical data through innovative AI technology, providing accessible healthcare insights and empowering users to make informed health decisions.
               </p>
             </div>
           </div>

@@ -181,7 +181,7 @@ export default function Home() {
               What is HealthSathi?
             </h2>
             <p className="mt-6 text-lg leading-8 text-foreground-secondary">
-              HealthSathi is a registered nonprofit organization committed to making healthcare accessible and understandable for everyone.
+              HealthSathi is a healthcare technology company committed to making healthcare accessible and understandable for everyone through innovative AI solutions.
             </p>
             <div className="mt-10">
               <Link

@@ -11,7 +11,7 @@ const navigation = [
   { name: 'About Us', href: '/about-us' },
   { name: 'Contact', href: '/contact-us' },
   { name: 'Blog', href: 'https://blog.health-sathi.org' },
-  { name: 'Donate', href: '/donate' },
+
 ];
 
 export default function Navbar() {

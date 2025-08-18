@@ -8,7 +8,7 @@ const Footer = () => {
     { href: '/contact-us', label: 'Contact' },
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: 'https://blog.health-sathi.org', label: 'Blog' },
-    { href: '/donate', label: 'Donate' },
+
   ];
 
   const contactInfo = {

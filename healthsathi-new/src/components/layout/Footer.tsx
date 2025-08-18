@@ -22,7 +22,7 @@ const Footer = () => {
               <li><Link href="/privacy-policy" className="hover:text-brand-red-primary transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-and-conditions" className="hover:text-brand-red-primary transition-colors">Terms & Conditions</Link></li>
               <li><Link href="https://blog.health-sathi.org" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red-primary transition-colors">Blog</Link></li>
-              <li><Link href="/donate" className="hover:text-brand-red-primary transition-colors">Donate</Link></li>
+
             </ul>
           </div>
           <div>
