@@ -9,9 +9,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about-us' },
-  { name: 'Contact', href: '/contact-us' },
   { name: 'Blog', href: 'https://blog.health-sathi.org' },
-
 ];
 
 export default function Navbar() {
@@ -84,10 +82,10 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            href="/contact-us"
+            href="/about-us"
             className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-[#EE2B47] shadow-sm hover:bg-brand-off-white transition-colors"
           >
-            Get Started
+            Learn More
           </Link>
         </div>
       </nav>
@@ -153,11 +151,11 @@ export default function Navbar() {
               </div>
               <div className="py-6">
                 <Link
-                  href="/contact-us"
+                  href="/about-us"
                   className="block w-full text-center rounded-full bg-white px-6 py-3 text-base font-semibold text-[#EE2B47] shadow-sm hover:bg-brand-off-white transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Get Started
+                  Learn More
                 </Link>
               </div>
             </div>

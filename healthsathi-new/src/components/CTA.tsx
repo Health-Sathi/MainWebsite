@@ -24,14 +24,16 @@ export default function CTA() {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
-              href="/contact-us"
+              href="/about-us"
               className="rounded-md bg-brand-red-primary px-6 py-3 text-sm font-semibold text-brand-white shadow-sm hover:bg-brand-red-dark hover:scale-105 hover:shadow-lg transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red-primary ring-2 ring-[#EE2A47]"
             >
-              Get Started Free
+              Learn More
             </a>
-            <a href="/learn-more"
+            <a href="https://blog.health-sathi.org"
+               target="_blank"
+               rel="noopener noreferrer"
                className="text-sm font-semibold leading-6 text-brand-white hover:text-brand-red-light hover:scale-105 transition-all duration-300">
-              Learn About Our Services <span aria-hidden="true">→</span>
+              Visit Our Blog <span aria-hidden="true">→</span>
             </a>
           </div>
         </motion.div>

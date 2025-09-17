@@ -160,10 +160,10 @@ export default function NotFound() {
                   About Us
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/privacy-policy"
                   className="text-brand-red-primary hover:text-brand-red-dark transition-colors duration-300"
                 >
-                  Contact
+                  Privacy Policy
                 </Link>
                 <Link
                   href="https://blog.health-sathi.org"
@@ -179,12 +179,12 @@ export default function NotFound() {
 
           {/* Report Issue Button */}
           <div className="mt-8">
-            <Link
-              href="/contact?subject=404-Error"
+            <a
+              href="mailto:support@health-sathi.org?subject=404-Error"
               className="text-sm text-brand-black/60 hover:text-brand-red-primary transition-colors"
             >
               Report this issue →
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>

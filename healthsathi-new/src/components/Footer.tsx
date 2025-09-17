@@ -5,10 +5,8 @@ const Footer = () => {
   const quickLinks = [
     { href: '/', label: 'Home' },
     { href: '/about-us', label: 'About Us' },
-    { href: '/contact-us', label: 'Contact' },
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: 'https://blog.health-sathi.org', label: 'Blog' },
-
   ];
 
   const contactInfo = {

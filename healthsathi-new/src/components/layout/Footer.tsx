@@ -18,11 +18,9 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link href="/" className="hover:text-brand-red-primary transition-colors">Home</Link></li>
               <li><Link href="/about-us" className="hover:text-brand-red-primary transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-brand-red-primary transition-colors">Contact</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-brand-red-primary transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-and-conditions" className="hover:text-brand-red-primary transition-colors">Terms & Conditions</Link></li>
               <li><Link href="https://blog.health-sathi.org" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red-primary transition-colors">Blog</Link></li>
-
             </ul>
           </div>
           <div>
